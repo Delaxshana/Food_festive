@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">The Deliverer</string>
+    <string name="user_name">User name</string>
+    <string name="password">Password</string>
+    <string name="login">LOGIN</string>
+    <string name="already_have_an_account">Already have an account</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="guest">GUEST</string>
+    <string name="last_name">TextView</string>
+    <string name="first_name">First Name</string>
+    <string name="last__name">Last Name</string>
+    <string name="email">Email</string>
+    <string name="phone_number">Phone number</string>
+    <string name="register">REGISTER</string>
+    <string name="address">No:01.Wasalla Road</string>
+    <string name="top_eats">Top Eats</string>
+    <string name="dessert">Dessert</string>
+    <string name="pizza">Pizza</string>
+    <string name="todo">TODO</string>
+    <string name="backery">Backery</string>
+    <string name="vegitarian">Vegetarian</string>
+    <string name="todo1">TODO</string>
+    <string name="top_deals">Top Deals</string>
+    <string name="todo3">TODO</string>
+
 </resources>
