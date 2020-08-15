@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">The Deliverer</string>
+    <string name="AddRider">Rider Registration</string>
+    <string name="RiderID">Rider ID</string>
+    <string name="RiderName">Rider Name</string>
+    <string name="RiderContact">Contact Number</string>
+    <string name="VehicleNumber">Vehicle Number</string>
+    <string name="AddRiderbtn">Add</string>
+    <string name="AddDelivery">Add Delivery</string>
+    <string name="DeliveryOrderNumber">Order No</string>
+    <string name="AddDeliveryBtn">Add Delivery</string>
+    <string name="UpdateDelivery">Update Delivery</string>
+    <string name="UpdateDeliveryBtn">Update</string>
+    <string name="DeleteDelivery">Delete Delivery</string>
+    <string name="DeleteDeliveryBtn">Delete</string>
+    <string name="DeliveriesList">Deliveries</string>
+    <string name="AddDeliveryDescription">Add delivery details here</string>
+    <string name="UpdateDeliveryDescription">Update delivery details here</string>
+    <string name="ViewDeliveryDescription">View previously added deliveries</string>
 </resources>

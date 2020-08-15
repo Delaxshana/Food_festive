@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewDelivery">
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/DeliveriesList"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.124"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.084" />
+
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/UpdateDeliveryBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.21"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.235" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/DeleteDeliveryBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.73"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.235" />
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="409dp"
+        android:layout_height="358dp"
+        android:stretchColumns="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.721">
+
+        <TableRow>
+
+            <CheckBox
+                android:id="@+id/checkBox4"
+                android:layout_width="26dp"
+                android:layout_height="26dp" />
+
+            <TextView
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="Order no" />
+
+            <TextView
+                android:gravity="right"
+                android:padding="3dip"
+                android:text="orderno1" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="Rider ID" />
+
+            <TextView
+                android:gravity="right"
+                android:padding="3dip"
+                android:text="RiderID1" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="Rider Name" />
+
+            <TextView
+                android:gravity="right"
+                android:padding="3dip"
+                android:text="name" />
+        </TableRow>
+
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="294dp"
+                android:layout_height="96dp"
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="Contact number" />
+
+            <TextView
+                android:gravity="right"
+                android:padding="3dip"
+                android:text="123456789" />
+        </TableRow>
+
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+
+        <TableRow>
+
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="26dp"
+                android:layout_height="26dp" />
+
+            <TextView
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="Order no" />
+
+            <TextView
+                android:gravity="right"
+                android:padding="3dip"
+                android:text="orderno2" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="Rider ID" />
+
+            <TextView
+                android:gravity="right"
+                android:padding="3dip"
+                android:text="RiderID2" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="Rider Name" />
+
+            <TextView
+                android:gravity="right"
+                android:padding="3dip"
+                android:text="name1" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="294dp"
+                android:layout_height="96dp"
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="Contact number" />
+
+            <TextView
+                android:gravity="right"
+                android:padding="3dip"
+                android:text="023456789" />
+        </TableRow>
+    </TableLayout>
+
+    <View
+        android:layout_height="2dip"
+        android:background="#FF909090"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="252dp" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ViewDeliveryDescription"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.441"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.139" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
