@@ -22,5 +22,6 @@
     <string name="todo1">TODO</string>
     <string name="top_deals">Top Deals</string>
     <string name="todo3">TODO</string>
+    <string name="edit_user">EDIT USER</string>
 
 </resources>
