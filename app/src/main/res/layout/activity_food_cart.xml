@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:fadingEdge="horizontal|vertical|none"
     android:visibility="visible"
+    android:background="@drawable/foodback14"
     tools:context=".FoodCart"
     tools:visibility="visible">
 
@@ -15,6 +16,7 @@
         android:layout_height="wrap_content"
         android:hint="@string/app_name"
         android:text="@string/your_foodcart"
+        android:textColor="#0E0E0E"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -173,9 +175,8 @@
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.677" />
+        app:layout_constraintVertical_bias="0.648" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
