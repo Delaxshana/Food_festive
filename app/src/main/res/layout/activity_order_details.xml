@@ -46,51 +46,62 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@drawable/border">
 
             <TextView
                 android:id="@+id/items"
+                android:background="@drawable/border"
                 android:padding="3dp"
-                android:text="@string/items" />
+                android:text="@string/items"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/price"
+                android:background="@drawable/border"
                 android:gravity="center"
                 android:padding="3dp"
-                android:text="@string/price" />
+                android:text="@string/price"
+                android:textStyle="bold" />
 
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@drawable/border">
 
             <TextView
                 android:id="@+id/item1"
                 android:padding="3dp"
-                android:text="@string/item1" />
+                android:text="@string/item1"
+                android:background="@drawable/border"/>
 
             <TextView
                 android:id="@+id/price1"
                 android:gravity="center"
                 android:padding="3dp"
-                android:text="@string/price1" />
+                android:text="@string/price1"
+                android:background="@drawable/border"/>
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@drawable/border">
 
             <TextView
                 android:id="@+id/item2"
                 android:padding="3dp"
-                android:text="@string/item2" />
+                android:text="@string/item2"
+                android:background="@drawable/border"/>
 
             <TextView
                 android:id="@+id/price2"
                 android:gravity="center"
                 android:padding="3dp"
-                android:text="@string/price2" />
+                android:text="@string/price2"
+                android:background="@drawable/border"/>
         </TableRow>
     </TableLayout>
 
@@ -108,11 +119,13 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@drawable/border">
 
             <TextView
                 android:padding="3dp"
-                android:text="@string/sub_total" />
+                android:text="@string/sub_total"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/sub_total_amount"
@@ -123,11 +136,13 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@drawable/border">
 
             <TextView
                 android:padding="3dp"
-                android:text="@string/discount_amount" />
+                android:text="@string/discount_amount"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/discount"
@@ -138,11 +153,13 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@drawable/border">
 
             <TextView
                 android:padding="3dp"
-                android:text="@string/total_amount" />
+                android:text="@string/total_amount"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/total"

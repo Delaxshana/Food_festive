@@ -10,7 +10,7 @@
     <string name="quantity1">1</string>
     <string name="size1">Small</string>
     <string name="quantity2">1</string>
-    <string name="size2">Medium</string>
+
     <string name="button2">Continue</string>
     <string name="button3">Continue Shopping</string>
     <string name="order_details">Your Order Details</string>
@@ -37,6 +37,7 @@
     <string name="time_input"></string>
     <string name="confirm_order">Confirm Order</string>
     <string name="cancel_order">Cancel Order</string>
+    <string name="size2">Medium</string>
 
 
 </resources>

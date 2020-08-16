@@ -52,70 +52,98 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@drawable/border">
 
             <TextView
                 android:layout_width="159dp"
+                android:background="@drawable/border"
                 android:hint="@string/item"
                 android:padding="3dp"
-                android:text="@string/item" />
+                android:text="@string/item"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="73dp"
+                android:background="@drawable/border"
                 android:gravity="center"
                 android:padding="3dp"
-                android:text="@string/quantity" />
+                android:text="@string/quantity"
+                android:textStyle="bold" />
 
             <TextView
+                android:background="@drawable/border"
                 android:gravity="center"
                 android:padding="3dp"
-                android:text="@string/size" />
+                android:text="@string/size"
+                android:textStyle="bold" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@drawable/border">
 
             <TextView
                 android:id="@+id/item1"
                 android:layout_width="123dp"
                 android:layout_height="match_parent"
                 android:padding="3dp"
-                android:text="@string/item1" />
+                android:text="@string/item1"
+                android:background="@drawable/border"/>
 
-            <TextView
+            <EditText
                 android:id="@+id/quantity1"
                 android:gravity="center"
+                android:hint="@string/quantity1"
+                android:inputType="number"
+                android:autofillHints="number"
                 android:padding="3dp"
                 android:text="@string/quantity1"
+                android:background="@drawable/border"
                 android:textSize="12sp" />
 
-            <TextView
+            <EditText
                 android:id="@+id/size1"
+                android:autofillHints="text"
                 android:gravity="center"
+                android:hint="@string/size1"
+                android:inputType="text"
                 android:padding="3dp"
                 android:text="@string/size1"
+                android:background="@drawable/border"
                 android:textSize="12sp" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@drawable/border">
 
             <TextView
                 android:id="@+id/item2"
                 android:padding="3dp"
-                android:text="@string/item2" />
+                android:text="@string/item2"
+                android:background="@drawable/border" />
 
-            <TextView
+            <EditText
                 android:id="@+id/quantity2"
+                android:autofillHints="number"
                 android:gravity="center"
+                android:hint="@string/quantity2"
+                android:inputType="number"
                 android:padding="3dp"
-                android:text="@string/quantity2" />
+                android:text="@string/quantity2"
+                android:background="@drawable/border"
+                android:textSize="12sp" />
 
-            <TextView
+            <EditText
                 android:id="@+id/size2"
+                android:autofillHints="text"
                 android:gravity="center"
+                android:hint="@string/size2"
+                android:inputType="text"
+                android:background="@drawable/border"
                 android:padding="3dp"
                 android:text="@string/size2"
                 android:textSize="12sp" />
