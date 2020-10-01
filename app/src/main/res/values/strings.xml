@@ -23,5 +23,13 @@
     <string name="top_deals">Top Deals</string>
     <string name="todo3">TODO</string>
     <string name="edit_user">EDIT USER</string>
+    <string name="adminLogin">LOGIN AS ADMIN</string>
+    <string name="userLogin">LOGIN AS USER</string>
+    <string name="addAddress">ADD</string>
+    <string name="addLater"> ADD LATER</string>
+    <string name="add">ADD ITEM</string>
+    <string name="update">DELETE ITEM</string>
+    <string name="delete">UPDATE ITEM</string>
+
 
 </resources>

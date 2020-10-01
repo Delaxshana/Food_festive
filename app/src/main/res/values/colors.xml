@@ -2,6 +2,10 @@
 <resources>
     <color name="colorPrimary">#000000</color>
     <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="themeMain">#B67A23</color>
+    <color name="themeSub">#B8B0A5</color>
+    <color name="black">#0D0E0E</color>
+
+
 
 </resources>
