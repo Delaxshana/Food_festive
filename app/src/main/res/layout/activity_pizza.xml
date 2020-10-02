@@ -24,42 +24,75 @@
                     android:id="@+id/imageView12"
                     android:layout_width="398dp"
                     android:layout_height="191dp"
-                    app:srcCompat="@drawable/pizza1" />
+                    app:srcCompat="@drawable/califlowerrice" />
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/textViewItem1"
                     android:layout_width="match_parent"
-                    android:layout_height="114dp"
-                    android:text="Details Pizza"
+                    android:layout_height="30dp"
+                    android:text="@string/item1"
+                    android:textColor="#151313"
                     android:textSize="18sp" />
 
-                <Button
-                    android:id="@+id/pizza1"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#DDB9B9"
-                    android:text="ORDER"
-                    android:textColor="#2B1F1F" />
+                    android:orientation="horizontal"
+                    android:layout_weight="100">
+
+                    <Button
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/themeSub"
+                        android:layout_marginRight="5dp"
+                        android:text="ORDER"
+                        android:layout_weight="33"/>
+
+                    <Button
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/themeSub"
+                        android:text="VIEW"
+                        android:layout_weight="33"/>
+
+                </LinearLayout>
 
                 <ImageView
                     android:id="@+id/imageView10"
                     android:layout_width="match_parent"
                     android:layout_height="236dp"
-                    app:srcCompat="@drawable/pizza2" />
+                    app:srcCompat="@drawable/friedrice" />
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/textViewItem2"
                     android:layout_width="match_parent"
-                    android:layout_height="111dp"
-                    android:text="Details Pizza"
+                    android:layout_height="30dp"
+                    android:text="@string/item2"
+                    android:textColor="#151313"
                     android:textSize="18sp" />
 
-                <Button
-                    android:id="@+id/button4"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#DDB9B9"
-                    android:text="ORDER" />
+                    android:orientation="horizontal"
+                    android:layout_weight="100">
+
+                    <Button
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/themeSub"
+                        android:layout_marginRight="5dp"
+                        android:text="ORDER"
+                        android:layout_weight="33"/>
+
+                    <Button
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/themeSub"
+                        android:text="VIEW"
+                        android:layout_weight="33"/>
+
+                </LinearLayout>
 
                 <ImageButton
                     android:id="@+id/imageButton"
@@ -68,18 +101,35 @@
                     app:srcCompat="@drawable/pizza3" />
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/textViewItem3"
                     android:layout_width="match_parent"
-                    android:layout_height="51dp"
-                    android:text="Details Pizza" />
+                    android:layout_height="30dp"
+                    android:text="@string/item3"
+                    android:textColor="#151313"
+                    android:textSize="18sp" />
 
-                <Button
-                    android:id="@+id/button5"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#DDB9B9"
-                    android:text="ORDER" />
+                    android:orientation="horizontal"
+                    android:layout_weight="100">
 
+                    <Button
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/themeSub"
+                        android:layout_marginRight="5dp"
+                        android:text="ORDER"
+                        android:layout_weight="33"/>
+
+                    <Button
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/themeSub"
+                        android:text="VIEW"
+                        android:layout_weight="33"/>
+
+                </LinearLayout>
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

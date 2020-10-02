@@ -27,7 +27,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String ITEM_COL_2 = "item name";
     public static final String ITEM_COL_3 = "item type";
     public static final String ITEM_COL_4 = "item image";
-    public static final String ITEM_COL_5= "description";
+    public static final String ITEM_COL_5 = "item price";
+    public static final String ITEM_COL_6= "description";
 
     public static final String TABLE_ADDRESS = "address";
     public static final String ADDRESS_COL_1 = "email";
@@ -43,7 +44,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table " + TABLE_USER + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, FNAME TEXT, lNAME TEXT,EMAIL TEXT,PASSWORD TEXT,PHONE INTEGER)");
-        db.execSQL("create table " + TABLE_ITEM + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, TYPE TEXT, Image BLOB, DESCRIPTION TEXT)");
+        db.execSQL("create table " + TABLE_ITEM + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, TYPE TEXT, Image BLOB, DESCRIPTION TEXT,PRICE INTEGER)");
         db.execSQL("create table " + TABLE_ADDRESS + "(EMAIL TEXT ,DOOTNO TEXT, STREETNAME TEXT,CITY TEXT,NOTE TEXT)");
     }
 
@@ -92,6 +93,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         else return true;
 }
 
+
+    public boolean insertUserAddress(String doorNo,String streetNo,String city,String note){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues= new ContentValues();
+        //contentValues.put(ADDRESS_COL_1,email);
+        contentValues.put(ADDRESS_COL_2,doorNo);
+        contentValues.put(ADDRESS_COL_3,streetNo);
+        contentValues.put(ADDRESS_COL_4,city);
+        contentValues.put(ADDRESS_COL_5,note);
+        long result=db.insert(TABLE_ADDRESS,null,contentValues);
+        if(result == -1){
+            return false;
+        }
+        else return true;
+    }
+
     public boolean deleteItem(Item item){
         SQLiteDatabase db = this.getWritableDatabase();
         try{
@@ -102,4 +119,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return false;
         }
     }
+
+
 }

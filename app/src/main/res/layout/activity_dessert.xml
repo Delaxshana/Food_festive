@@ -76,15 +76,5 @@
         app:layout_constraintVertical_bias="0.026"
         app:srcCompat="@drawable/dessert1" />
 
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="120dp"
-        android:layout_height="104dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.034"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499"
-        app:srcCompat="@drawable/dessert2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

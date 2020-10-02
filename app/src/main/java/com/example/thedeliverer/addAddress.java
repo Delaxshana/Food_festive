@@ -7,10 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class addAddress extends AppCompatActivity {
     private EditText doorNo, streetName,city,notes;
     private Button add, addLater;
+    DatabaseHelper db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +32,7 @@ public class addAddress extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(addAddress.this, dashboard.class);
                 startActivity(intent);
+
             }
         });
 
@@ -38,6 +41,21 @@ public class addAddress extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(addAddress.this, dashboard.class);
                 startActivity(intent);
+            }
+        });
+
+    }
+    public void addAddress(){
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean result= db.insertUserAddress(doorNo.getText().toString(),streetName.getText().toString(),
+                        city.getText().toString(),notes.getText().toString());
+                if(result=true){
+                    Toast.makeText(addAddress.this,"Data inserted",Toast.LENGTH_LONG).show();
+                }
+                else
+                    Toast.makeText(addAddress.this,"Data is not inserted",Toast.LENGTH_LONG).show();
             }
         });
     }
