@@ -12,8 +12,6 @@
         <activity android:name=".UpdateDelivery"/>
 
 
-
-
         <activity android:name=".DeleteDelivery"/>
 
 
@@ -24,7 +22,11 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+
+
+
 
 
 

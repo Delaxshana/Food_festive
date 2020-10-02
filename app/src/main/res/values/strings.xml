@@ -17,4 +17,5 @@
     <string name="AddDeliveryDescription">Add delivery details here</string>
     <string name="UpdateDeliveryDescription">Update delivery details here</string>
     <string name="ViewDeliveryDescription">View previously added deliveries</string>
+    <string name="AddRiderBtnV">Add Rider</string>
 </resources>
