@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".OrderConfirmation"></activity>
+        <activity android:name=".OrderDetails" /> <!-- <meta-data -->
+        <!-- android:name="com.google.android.actions" /> -->
+        <activity android:name=".FoodCart" />
         <activity android:name=".adminDashboard" />
         <activity android:name=".deletItem" />
         <activity android:name=".updateItem" />

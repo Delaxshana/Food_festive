@@ -69,6 +69,7 @@
                                     android:layout_weight="100">
 
                                     <Button
+                                        android:id="@+id/food_item1_btn"
                                         android:layout_width="100dp"
                                         android:layout_height="wrap_content"
                                         android:background="@color/themeSub"
@@ -106,6 +107,7 @@
                                     android:layout_weight="100">
 
                                     <Button
+                                        android:id="@+id/food_item2_btn"
                                         android:layout_width="100dp"
                                         android:layout_height="wrap_content"
                                         android:background="@color/themeSub"
@@ -143,6 +145,7 @@
                                     android:layout_weight="100">
 
                                     <Button
+                                        android:id="@+id/food_item3_btn"
                                         android:layout_width="100dp"
                                         android:layout_height="wrap_content"
                                         android:background="@color/themeSub"
@@ -180,6 +183,7 @@
                                     android:layout_weight="100">
 
                                     <Button
+                                        android:id="@+id/food_item4_btn"
                                         android:layout_width="100dp"
                                         android:layout_height="wrap_content"
                                         android:background="@color/themeSub"
