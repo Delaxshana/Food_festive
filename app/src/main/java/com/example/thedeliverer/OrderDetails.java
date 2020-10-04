@@ -16,13 +16,16 @@ import java.util.Map;
 public class OrderDetails extends AppCompatActivity {
     TextView food_item1,food_item2,food_item3,food_item4;
     EditText food_quantity1,food_quantity2,food_quantity3,food_quantity4;
+    EditText food_size1,food_size2,food_size3,food_size4;
     EditText item_name,item_quantity,item_size;
     String item1,item2,item3;
+    String items1,items2,items3;
     String quantity1,quantity2, quantity3;
     String size1,size2,size3;
     Map<String,String> items_quantities;
     Map<String,String> items_sizes;
     TableRow row1,row2,row3,row4;
+    Button edit_btn,delete_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,11 @@ public class OrderDetails extends AppCompatActivity {
         food_quantity2 = findViewById(R.id.food_quantity2);
         food_quantity3 = findViewById(R.id.food_quantity3);
         food_quantity4 = findViewById(R.id.food_quantity4);
+        //Initializing sizes
+        food_size1 = findViewById(R.id.food_size1);
+        food_size2 = findViewById(R.id.food_size2);
+        food_size3 = findViewById(R.id.food_size3);
+        food_size4 = findViewById(R.id.food_size4);
         //Initializing rows
         row1 = findViewById(R.id.row1);
         row2 = findViewById(R.id.row2);
@@ -59,6 +67,10 @@ public class OrderDetails extends AppCompatActivity {
         //int i =0;
 
         Button continue_btn = findViewById(R.id.continue_button);
+        edit_btn = findViewById(R.id.edit_btn);
+        edit_btn.setVisibility(View.INVISIBLE);
+        delete_btn = findViewById(R.id.delete_btn);
+        delete_btn.setVisibility(View.INVISIBLE);
 
         Intent intent = getIntent();
         items_quantities = (HashMap<String, String>) intent.getSerializableExtra("items_and_quantities");
@@ -86,20 +98,20 @@ public class OrderDetails extends AppCompatActivity {
         }
 
         for (String key:items_sizes.keySet()){
-            if (item1 == null){
-                item1 = key;
+            if (items1 == null){
+                items1 = key;
                 size1 = items_sizes.get(key);
                 continue;
             }
 
-            if(item1!=null && item2 == null){
-                item2 = key;
+            if(items1!=null && items2 == null){
+                items2 = key;
                 size2 = items_sizes.get(key);
                 continue;
             }
 
-            if (item1 != null && item2!=null && item3==null){
-                item3 = key;
+            if (items1 != null && items2!=null && items3==null){
+                items3 = key;
                 size3 = items_sizes.get(key);
                 break;
             }
@@ -119,6 +131,13 @@ public class OrderDetails extends AppCompatActivity {
         food_quantity2.setEnabled(false);
         food_quantity3.setText(quantity3);
         food_quantity3.setEnabled(false);
+
+        food_size1.setText(size1);
+        food_size1.setEnabled(false);
+        food_size2.setText(size2);
+        food_size2.setEnabled(false);
+        food_size3.setText(size3);
+        food_size3.setEnabled(false);
 
 //        food_item1.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -163,18 +182,24 @@ public class OrderDetails extends AppCompatActivity {
     public void setRowDetails1(View view){
         item_name.setText(food_item1.getText().toString());
         item_quantity.setText(food_quantity1.getText().toString());
-        item_size.setText(size1);
+        item_size.setText(food_size1.getText().toString());
+        edit_btn.setVisibility(View.VISIBLE);
+        delete_btn.setVisibility(View.VISIBLE);
     }
 
     public void setRowDetails2(View view){
         item_name.setText(food_item2.getText().toString());
         item_quantity.setText(food_quantity2.getText().toString());
-        item_size.setText(size2);
+        item_size.setText(food_size2.getText().toString());
+        edit_btn.setVisibility(View.VISIBLE);
+        delete_btn.setVisibility(View.VISIBLE);
     }
 
     public void setRowDetails3(View view){
         item_name.setText(food_item3.getText().toString());
         item_quantity.setText(food_quantity3.getText().toString());
-        item_size.setText(size3);
+        item_size.setText(food_size3.getText().toString());
+        edit_btn.setVisibility(View.VISIBLE);
+        delete_btn.setVisibility(View.VISIBLE);
     }
 }
