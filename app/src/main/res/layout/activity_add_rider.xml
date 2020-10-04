@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFD500"
     tools:context=".AddRider">
 
     <TextView
@@ -59,20 +60,21 @@
         app:layout_constraintVertical_bias="0.3" />
 
     <TextView
-        android:id="@+id/textView4"
-        android:layout_width="140dp"
-        android:layout_height="50dp"
+        android:id="@+id/textView"
+        android:layout_width="142dp"
+        android:layout_height="40dp"
         android:layout_marginStart="2dp"
         android:layout_marginLeft="2dp"
+        android:layout_marginTop="10dp"
         android:text="@string/RiderContact"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.114"
+        app:layout_constraintHorizontal_bias="0.116"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.446" />
+        app:layout_constraintVertical_bias="0.443" />
 
     <TextView
         android:id="@+id/textView5"
@@ -123,23 +125,13 @@
         app:layout_constraintHorizontal_bias="0.925"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/ContactNum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="phone"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.93"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <Button
         android:id="@+id/AddRide"
         android:layout_width="199dp"
         android:layout_height="66dp"
         android:layout_marginBottom="16dp"
         android:background="#FF5622"
+        android:onClick="addData"
         android:shadowColor="#FF7A22"
         android:text="@string/AddRiderbtn"
         android:textColor="@android:color/background_light"
@@ -149,4 +141,15 @@
         app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <EditText
+        android:id="@+id/RiderContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.636"
+        app:layout_constraintStart_toEndOf="@+id/textView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

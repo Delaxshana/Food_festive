@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFD500"
     tools:context=".AddDelivery">
 
     <TextView
@@ -78,7 +79,7 @@
         app:layout_constraintVertical_bias="0.574" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/addOrder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -89,7 +90,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName7"
+        android:id="@+id/addRiderID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -100,7 +101,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName10"
+        android:id="@+id/addRiderName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -126,7 +127,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <EditText
-        android:id="@+id/editTextPhone2"
+        android:id="@+id/addContactNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -141,7 +142,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/AddDeliveryDescription"
-        android:textColor="@android:color/holo_orange_dark"
+        android:textColor="@android:color/black"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

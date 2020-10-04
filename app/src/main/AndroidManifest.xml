@@ -12,18 +12,15 @@
         <activity android:name=".UpdateDelivery"/>
 
 
+
         <activity android:name=".DeleteDelivery"/>
 
 
 
-        <activity android:name=".ViewDelivery">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity android:name=".ViewDelivery"/>
 
-        </activity>
+
 
 
 
@@ -33,7 +30,16 @@
         <activity android:name=".AddDelivery"/>
 
 
-        <activity android:name=".AddRider"/>
+
+        <activity android:name=".AddRider">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
 
 
         <activity android:name=".Register" />
