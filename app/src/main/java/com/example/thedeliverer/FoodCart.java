@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.example.thedeliverer.Database.DBHelper;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -63,27 +66,43 @@ public class FoodCart extends AppCompatActivity {
         item2.setText(msg2);
         item3.setText(msg3);
 
-        continue_btn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent i1 = new Intent(FoodCart.this,OrderDetails.class);
-                //Filling items_and_quantities
-                items_and_quantities.put(item1.getText().toString(),quantity1.getText().toString());
-                items_and_quantities.put(item2.getText().toString(),quantity2.getText().toString());
-                items_and_quantities.put(item3.getText().toString(),quantity3.getText().toString());
-                //Fillin items_and_sizes
-                items_and_sizes.put(item1.getText().toString(),size1.getText().toString());
-                items_and_sizes.put(item2.getText().toString(),size2.getText().toString());
-                items_and_sizes.put(item3.getText().toString(),size3.getText().toString());
-                //Adding extra to intent
-                i1.putExtra("items_and_quantities",(HashMap<String,String>)items_and_quantities);
-                i1.putExtra("items_and_sizes",(HashMap<String,String>)items_and_sizes);
-                startActivity(i1);
-            }
-        });
+//        continue_btn.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View view) {
+//
+//            }
+//        });
 
 
 
 
+    }
+
+    public void addToCart(View view){
+        DBHelper dbHelper = new DBHelper(this);
+        long val1 = dbHelper.addCartTableInfo(item1.getText().toString(),quantity1.getText().toString(),size1.getText().toString());
+        long val2 = dbHelper.addCartTableInfo(item2.getText().toString(),quantity2.getText().toString(),size2.getText().toString());
+        long val3 = dbHelper.addCartTableInfo(item3.getText().toString(),quantity3.getText().toString(),size3.getText().toString());
+
+        Intent i1 = new Intent(FoodCart.this,OrderDetails.class);
+        //Filling items_and_quantities
+        items_and_quantities.put(item1.getText().toString(),quantity1.getText().toString());
+        items_and_quantities.put(item2.getText().toString(),quantity2.getText().toString());
+        items_and_quantities.put(item3.getText().toString(),quantity3.getText().toString());
+        //Fillin items_and_sizes
+        items_and_sizes.put(item1.getText().toString(),size1.getText().toString());
+        items_and_sizes.put(item2.getText().toString(),size2.getText().toString());
+        items_and_sizes.put(item3.getText().toString(),size3.getText().toString());
+        //Adding extra to intent
+//        i1.putExtra("items_and_quantities",(HashMap<String,String>)items_and_quantities);
+//        i1.putExtra("items_and_sizes",(HashMap<String,String>)items_and_sizes);
+
+        if (val1>0 && val2>0 && val3>0){
+            Toast.makeText(this, "Data successfully inserted", Toast.LENGTH_SHORT).show();
+        } else{
+            Toast.makeText(this, "Data Not inserted!", Toast.LENGTH_SHORT).show();
+        }
+
+        startActivity(i1);
     }
 }

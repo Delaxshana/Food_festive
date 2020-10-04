@@ -9,8 +9,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.thedeliverer.Database.DBHelper;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class OrderDetails extends AppCompatActivity {
@@ -73,8 +77,12 @@ public class OrderDetails extends AppCompatActivity {
         delete_btn.setVisibility(View.INVISIBLE);
 
         Intent intent = getIntent();
-        items_quantities = (HashMap<String, String>) intent.getSerializableExtra("items_and_quantities");
-        items_sizes = (HashMap<String, String>)intent.getSerializableExtra("items_and_sizes");
+        DBHelper dbHelper = new DBHelper(this);
+
+        items_quantities= dbHelper.readAllcartsInfo("items_and_quantities");
+        items_sizes = dbHelper.readAllcartsInfo("items_and_sizes");
+//        items_quantities = (HashMap<String, String>) intent.getSerializableExtra("items_and_quantities");
+//        items_sizes = (HashMap<String, String>)intent.getSerializableExtra("items_and_sizes");
 
         for (String key:items_quantities.keySet()){
             if (item1 == null){
@@ -202,4 +210,43 @@ public class OrderDetails extends AppCompatActivity {
         edit_btn.setVisibility(View.VISIBLE);
         delete_btn.setVisibility(View.VISIBLE);
     }
+
+    public void deleteData(View view){
+        DBHelper dbHelper = new DBHelper(this);
+
+        dbHelper.deleteCartInfo(item_name.getText().toString());
+
+        Intent i1 = new Intent(OrderDetails.this,OrderDetails.class);
+
+        Toast.makeText(this, item_name.getText().toString() + " deleted Successfully", Toast.LENGTH_SHORT).show();
+
+        startActivity(i1);
+
+    }
+
+    public void updateData(View view){
+        DBHelper dbHelper = new DBHelper(this);
+
+        int val = dbHelper.updateCartInfo(item_name.getText().toString(),item_quantity.getText().toString(),item_size.getText().toString());
+
+        Intent i2 = new Intent(OrderDetails.this,OrderDetails.class);
+        if (val>0){
+            Toast.makeText(this, "Data updates successfully", Toast.LENGTH_SHORT).show();
+        } else{
+            Toast.makeText(this, "Data did not update!", Toast.LENGTH_SHORT).show();
+        }
+
+        startActivity(i2);
+
+    }
+
+
+
+//    public void readCartInfo(View view){
+//
+//
+//        Toast.makeText(this,unames.toString(), Toast.LENGTH_SHORT).show();
+//    }
+
+
 }
