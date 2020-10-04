@@ -36,8 +36,8 @@
 
     <TableLayout
         android:id="@+id/tableLayout3"
-        android:layout_width="312dp"
-        android:layout_height="122dp"
+        android:layout_width="338dp"
+        android:layout_height="132dp"
         android:stretchColumns="1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -69,25 +69,39 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/row1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/border">
+            android:background="@drawable/border"
+            android:clickable="true"
+            android:onClick="setRowDetails1">
 
-            <EditText
+            <TextView
                 android:id="@+id/food_item1"
-                android:autofillHints="number"
                 android:background="@drawable/border"
-                android:gravity="center"
-                android:hint="item1"
-                android:inputType="text"
+                android:onClick="setRowDetails1"
                 android:padding="3dp"
-                android:text=""
-                android:textSize="12sp" />
+                android:text="Item1"
+                android:textStyle="normal" />
+
+            <!--            <EditText-->
+            <!--                android:id="@+id/food_item1"-->
+            <!--                android:autofillHints="number"-->
+            <!--                android:background="@drawable/border"-->
+            <!--                android:clickable="true"-->
+            <!--                android:gravity="center"-->
+            <!--                android:hint="item1"-->
+            <!--                android:inputType="text"-->
+            <!--                android:onClick="setRowDetails1"-->
+            <!--                android:padding="3dp"-->
+            <!--                android:text=""-->
+            <!--                android:textSize="12sp" />-->
 
             <EditText
                 android:id="@+id/food_quantity1"
                 android:autofillHints="number"
                 android:background="@drawable/border"
+                android:clickable="false"
                 android:gravity="center"
                 android:hint="1"
                 android:inputType="number"
@@ -98,25 +112,39 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/row2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/border">
+            android:background="@drawable/border"
+            android:clickable="true"
+            android:onClick="setRowDetails2">
 
-            <EditText
+            <TextView
                 android:id="@+id/food_item2"
-                android:autofillHints="number"
                 android:background="@drawable/border"
-                android:gravity="center"
-                android:hint="item2"
-                android:inputType="text"
+                android:onClick="setRowDetails2"
                 android:padding="3dp"
-                android:text=""
-                android:textSize="12sp" />
+                android:text="Item2"
+                android:textStyle="normal" />
+
+            <!--            <EditText-->
+            <!--                android:id="@+id/food_item2"-->
+            <!--                android:autofillHints="number"-->
+            <!--                android:background="@drawable/border"-->
+            <!--                android:clickable="true"-->
+            <!--                android:gravity="center"-->
+            <!--                android:hint="item2"-->
+            <!--                android:inputType="text"-->
+            <!--                android:onClick="setRowDetails2"-->
+            <!--                android:padding="3dp"-->
+            <!--                android:text=""-->
+            <!--                android:textSize="12sp" />-->
 
             <EditText
                 android:id="@+id/food_quantity2"
                 android:autofillHints="number"
                 android:background="@drawable/border"
+                android:clickable="false"
                 android:gravity="center"
                 android:hint="1"
                 android:inputType="number"
@@ -126,20 +154,33 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/row3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/border">
+            android:background="@drawable/border"
+            android:clickable="true"
+            android:onClick="setRowDetails3">
 
-            <EditText
+            <TextView
                 android:id="@+id/food_item3"
-                android:autofillHints="number"
                 android:background="@drawable/border"
-                android:gravity="center"
-                android:hint="item3"
-                android:inputType="text"
+                android:onClick="setRowDetails3"
                 android:padding="3dp"
-                android:text=""
-                android:textSize="12sp" />
+                android:text="Item3"
+                android:textStyle="normal" />
+
+            <!--            <EditText-->
+            <!--                android:id="@+id/food_item3"-->
+            <!--                android:autofillHints="number"-->
+            <!--                android:background="@drawable/border"-->
+            <!--                android:clickable="true"-->
+            <!--                android:gravity="center"-->
+            <!--                android:hint="item3"-->
+            <!--                android:inputType="text"-->
+            <!--                android:onClick="setRowDetails3"-->
+            <!--                android:padding="3dp"-->
+            <!--                android:text=""-->
+            <!--                android:textSize="12sp" />-->
 
             <EditText
                 android:id="@+id/food_quantity3"
@@ -154,20 +195,29 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/row4"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/border">
+            android:background="@drawable/border"
+            android:clickable="true">
 
-            <EditText
+            <TextView
                 android:id="@+id/food_item4"
-                android:autofillHints="number"
                 android:background="@drawable/border"
-                android:gravity="center"
-                android:hint="item4"
-                android:inputType="text"
                 android:padding="3dp"
-                android:text=""
-                android:textSize="12sp" />
+                android:text="Item4"
+                android:textStyle="normal" />
+
+            <!--            <EditText-->
+            <!--                android:id="@+id/food_item4"-->
+            <!--                android:autofillHints="number"-->
+            <!--                android:background="@drawable/border"-->
+            <!--                android:gravity="center"-->
+            <!--                android:hint="item4"-->
+            <!--                android:inputType="text"-->
+            <!--                android:padding="3dp"-->
+            <!--                android:text=""-->
+            <!--                android:textSize="12sp" />-->
 
             <EditText
                 android:id="@+id/food_quantity4"
@@ -189,10 +239,10 @@
         android:stretchColumns="1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.552"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.553">
+        app:layout_constraintVertical_bias="0.769">
 
         <TableRow
             android:layout_width="match_parent"
@@ -201,14 +251,25 @@
 
             <TextView
                 android:padding="3dp"
-                android:text="Sub Total"
+                android:text="Item"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/sub_total_amount"
-                android:gravity="end"
+            <EditText
+                android:id="@+id/item_name"
+                android:autofillHints="text"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:hint="item name"
+                android:inputType="text"
                 android:padding="3dp"
-                android:text="Rs.1590" />
+                android:text=""
+                android:textSize="12sp" />
+
+<!--            <TextView-->
+<!--                android:id="@+id/item_name"-->
+<!--                android:gravity="end"-->
+<!--                android:padding="3dp"-->
+<!--                android:text="item name" />-->
         </TableRow>
 
         <TableRow
@@ -218,14 +279,25 @@
 
             <TextView
                 android:padding="3dp"
-                android:text="Discount Amount"
+                android:text="Quantity"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/discount"
-                android:gravity="end"
+            <EditText
+                android:id="@+id/item_quantity"
+                android:autofillHints="number"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:hint="1"
+                android:inputType="number"
                 android:padding="3dp"
-                android:text="Rs.0.0" />
+                android:text=""
+                android:textSize="12sp" />
+
+<!--            <TextView-->
+<!--                android:id="@+id/item_quantity"-->
+<!--                android:gravity="end"-->
+<!--                android:padding="3dp"-->
+<!--                android:text="1" />-->
         </TableRow>
 
         <TableRow
@@ -235,14 +307,25 @@
 
             <TextView
                 android:padding="3dp"
-                android:text="Total Amount"
+                android:text="Size"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/total"
-                android:gravity="end"
+            <EditText
+                android:id="@+id/item_size"
+                android:autofillHints="text"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:hint="small"
+                android:inputType="text"
                 android:padding="3dp"
-                android:text="Rs.1570" />
+                android:text=""
+                android:textSize="12sp" />
+
+<!--            <TextView-->
+<!--                android:id="@+id/item_size"-->
+<!--                android:gravity="end"-->
+<!--                android:padding="3dp"-->
+<!--                android:text="small" />-->
         </TableRow>
     </TableLayout>
 
@@ -257,6 +340,32 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.73" />
+        app:layout_constraintVertical_bias="0.961" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="36dp"
+        android:text="Any Special Instructions?"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout3" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="315dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Type special instructions here."
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
