@@ -28,7 +28,8 @@ public class OrderDetails extends AppCompatActivity {
     String size1,size2,size3;
     Map<String,String> items_quantities;
     Map<String,String> items_sizes;
-    TableRow row1,row2,row3,row4;
+    EditText special_instructions_txt;
+//    TableRow row1,row2,row3,row4;
     Button edit_btn,delete_btn;
 
     @Override
@@ -50,11 +51,13 @@ public class OrderDetails extends AppCompatActivity {
         food_size2 = findViewById(R.id.food_size2);
         food_size3 = findViewById(R.id.food_size3);
         food_size4 = findViewById(R.id.food_size4);
+        //Initializing special instructions
+        special_instructions_txt = findViewById(R.id.special_inst_txt);
         //Initializing rows
-        row1 = findViewById(R.id.row1);
-        row2 = findViewById(R.id.row2);
-        row3 = findViewById(R.id.row3);
-        row4 = findViewById(R.id.row4);
+//        row1 = findViewById(R.id.row1);
+//        row2 = findViewById(R.id.row2);
+//        row3 = findViewById(R.id.row3);
+//        row4 = findViewById(R.id.row4);
         //Initializing second table values
         item_name = findViewById(R.id.item_name);
         item_quantity = findViewById(R.id.item_quantity);
@@ -182,6 +185,7 @@ public class OrderDetails extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i1 = new Intent(OrderDetails.this,OrderConfirmation.class);
+                i1.putExtra("special_inst",special_instructions_txt.getText().toString());
                 startActivity(i1);
             }
         });
