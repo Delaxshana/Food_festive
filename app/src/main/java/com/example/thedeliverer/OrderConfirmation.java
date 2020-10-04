@@ -42,4 +42,9 @@ public class OrderConfirmation extends AppCompatActivity {
         i1.putExtra("special_inst",special_instructions_msg);
         startActivity(i1);
     }
+
+    public void deleteData(View view){
+        Intent i2 = new Intent(OrderConfirmation.this,dashboard.class);
+        startActivity(i2);
+    }
 }

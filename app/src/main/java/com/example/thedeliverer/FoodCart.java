@@ -85,14 +85,14 @@ public class FoodCart extends AppCompatActivity {
         long val3 = dbHelper.addCartTableInfo(item3.getText().toString(),quantity3.getText().toString(),size3.getText().toString());
 
         Intent i1 = new Intent(FoodCart.this,OrderDetails.class);
-        //Filling items_and_quantities
-        items_and_quantities.put(item1.getText().toString(),quantity1.getText().toString());
-        items_and_quantities.put(item2.getText().toString(),quantity2.getText().toString());
-        items_and_quantities.put(item3.getText().toString(),quantity3.getText().toString());
-        //Fillin items_and_sizes
-        items_and_sizes.put(item1.getText().toString(),size1.getText().toString());
-        items_and_sizes.put(item2.getText().toString(),size2.getText().toString());
-        items_and_sizes.put(item3.getText().toString(),size3.getText().toString());
+//        //Filling items_and_quantities
+//        items_and_quantities.put(item1.getText().toString(),quantity1.getText().toString());
+//        items_and_quantities.put(item2.getText().toString(),quantity2.getText().toString());
+//        items_and_quantities.put(item3.getText().toString(),quantity3.getText().toString());
+//        //Fillin items_and_sizes
+//        items_and_sizes.put(item1.getText().toString(),size1.getText().toString());
+//        items_and_sizes.put(item2.getText().toString(),size2.getText().toString());
+//        items_and_sizes.put(item3.getText().toString(),size3.getText().toString());
         //Adding extra to intent
 //        i1.putExtra("items_and_quantities",(HashMap<String,String>)items_and_quantities);
 //        i1.putExtra("items_and_sizes",(HashMap<String,String>)items_and_sizes);

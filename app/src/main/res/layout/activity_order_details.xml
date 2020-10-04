@@ -25,15 +25,16 @@
         android:id="@+id/edit_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#CDDC39"
         android:onClick="updateData"
-        android:text="Edit"
+        android:text="@string/edit_btn"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.334"
+        app:layout_constraintHorizontal_bias="0.303"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.871" />
+        app:layout_constraintVertical_bias="0.872" />
 
     <TableLayout
         android:id="@+id/tableLayout3"
@@ -56,7 +57,8 @@
                 android:id="@+id/items"
                 android:background="@drawable/border"
                 android:padding="3dp"
-                android:text="Item"
+                android:text="@string/item_name"
+                android:textColor="#0E0E0E"
                 android:textStyle="bold" />
 
             <TextView
@@ -64,7 +66,8 @@
                 android:background="@drawable/border"
                 android:gravity="center"
                 android:padding="3dp"
-                android:text="Quantity"
+                android:text="@string/item_quantity"
+                android:textColor="#0E0E0E"
                 android:textStyle="bold" />
 
             <TextView
@@ -72,7 +75,8 @@
                 android:background="@drawable/border"
                 android:gravity="center"
                 android:padding="3dp"
-                android:text="Size"
+                android:text="@string/item_size"
+                android:textColor="#0E0E0E"
                 android:textStyle="bold" />
 
         </TableRow>
@@ -91,6 +95,7 @@
                 android:onClick="setRowDetails1"
                 android:padding="3dp"
                 android:text="Item1"
+                android:textColor="#2E2727"
                 android:textStyle="normal" />
 
             <!--            <EditText-->
@@ -146,6 +151,7 @@
                 android:onClick="setRowDetails2"
                 android:padding="3dp"
                 android:text="Item2"
+                android:textColor="#2E2727"
                 android:textStyle="normal" />
 
             <!--            <EditText-->
@@ -200,6 +206,7 @@
                 android:onClick="setRowDetails3"
                 android:padding="3dp"
                 android:text="Item3"
+                android:textColor="#2E2727"
                 android:textStyle="normal" />
 
             <!--            <EditText-->
@@ -251,6 +258,7 @@
                 android:background="@drawable/border"
                 android:padding="3dp"
                 android:text="Item4"
+                android:textColor="#2E2727"
                 android:textStyle="normal" />
 
             <!--            <EditText-->
@@ -308,7 +316,8 @@
 
             <TextView
                 android:padding="3dp"
-                android:text="Item"
+                android:text="@string/item_name"
+                android:textColor="#0E0E0E"
                 android:textStyle="bold" />
 
             <EditText
@@ -336,7 +345,8 @@
 
             <TextView
                 android:padding="3dp"
-                android:text="Quantity"
+                android:text="@string/item_quantity"
+                android:textColor="#0E0E0E"
                 android:textStyle="bold" />
 
             <EditText
@@ -364,7 +374,8 @@
 
             <TextView
                 android:padding="3dp"
-                android:text="Size"
+                android:text="@string/item_size"
+                android:textColor="#0E0E0E"
                 android:textStyle="bold" />
 
             <EditText
@@ -388,9 +399,10 @@
 
     <Button
         android:id="@+id/continue_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Continue"
+        android:layout_width="192dp"
+        android:layout_height="42dp"
+        android:background="#4CAF50"
+        android:text="@string/continue1_btn"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -407,6 +419,7 @@
         android:layout_marginLeft="48dp"
         android:layout_marginTop="36dp"
         android:text="Any Special Instructions?"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableLayout3" />
 
@@ -429,11 +442,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="60dp"
+        android:background="#FF5722"
         android:onClick="deleteData"
-        android:text="Delete"
+        android:text="@string/delete_btn"
         app:layout_constraintBottom_toBottomOf="@+id/continue_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toEndOf="@+id/edit_btn" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="60dp"
+        android:text="Please click the item to change/delete details"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/order_details" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

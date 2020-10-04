@@ -69,8 +69,8 @@ public class OrderDetails extends AppCompatActivity {
         item1 = null;
         item2 = null;
         item3 = null;
-        String items[] = {};
-        String quantities[] = {};
+//        String items[] = {};
+//        String quantities[] = {};
         //int i =0;
 
         Button continue_btn = findViewById(R.id.continue_button);

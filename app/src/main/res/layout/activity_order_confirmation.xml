@@ -49,6 +49,7 @@
         android:layout_marginTop="60dp"
         android:text="Order Type"
         android:textSize="12sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -123,9 +124,10 @@
         android:layout_marginLeft="48dp"
         android:layout_marginTop="128dp"
         android:text="Date"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
-        tools:text="Date"/>
+        tools:text="Date" />
 
     <!--        app:layout_constraintBottom_toBottomOf="parent"-->
 <!--        app:layout_constraintEnd_toEndOf="parent"-->
@@ -168,6 +170,7 @@
         android:layout_marginLeft="52dp"
         android:layout_marginTop="32dp"
         android:text="Time"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
@@ -202,12 +205,14 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="111dp"
+        android:layout_height="48dp"
         android:layout_marginStart="148dp"
         android:layout_marginLeft="148dp"
         android:layout_marginTop="64dp"
-        android:text="Confirm Order"
+        android:background="#009688"
+        android:onClick="sendData"
+        android:text="@string/continue2_btn"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/time_input" />
@@ -218,7 +223,9 @@
         android:layout_marginStart="148dp"
         android:layout_marginLeft="148dp"
         android:layout_marginTop="44dp"
-        android:text="Cancel Order"
+        android:background="#FF5722"
+        android:onClick="deleteData"
+        android:text="@string/cancel_btn"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
