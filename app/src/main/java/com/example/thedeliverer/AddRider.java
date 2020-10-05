@@ -2,7 +2,6 @@ package com.example.thedeliverer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -15,27 +14,30 @@ import com.example.thedeliverer.Database.DBHelperDelivery;
 public class AddRider extends AppCompatActivity {
 
     EditText RiderID,RiderName,VehicleNum;
-    int num;
+    EditText Contact;
+    Button btnRide;
+    DBHelperDelivery mydb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_rider);
 
+        mydb = new DBHelperDelivery(this);
+
         RiderID=findViewById(R.id.riderID);
         RiderName=findViewById(R.id.riderName);
-       // Contact = findViewById(R.id.ContactNum);
+       Contact = findViewById(R.id.RiderContact);
         VehicleNum=findViewById(R.id.VehicleNum);
+        btnRide = (Button)this.findViewById(R.id.AddRide);
 
-
-
-        //Button btnRide = this.findViewById(R.id.AddRide);
+        addRiderData();
 
         //btnRide.setOnClickListener(new View.OnClickListener(){
 
-          //  public void onClick(View view) {
-                //Intent i1 = new Intent(AddRider.this,ViewDelivery.class);
-                //startActivity(i1);
+          //public void onClick(View view) {
+            //    Intent i1 = new Intent(AddRider.this,ViewDelivery.class);
+              //  startActivity(i1);
 
                 //Context context = getApplicationContext();
                 //CharSequence message = "Rider Added";
@@ -46,28 +48,27 @@ public class AddRider extends AppCompatActivity {
         //});
     }
 
-    public void addData(View view){
-        DBHelperDelivery dbhelperdelivery = new DBHelperDelivery(this);
+    public void addRiderData (){
+
+      btnRide.setOnClickListener(
+              new View.OnClickListener(){
+                  @Override
+                  public void onClick(View view) {
+                      boolean isInserted = mydb.insertRider(RiderID.getText().toString(),RiderName.getText().toString(),Contact.getText().toString(),VehicleNum.getText().toString());
+
+                      if(isInserted = true){
+                          Toast.makeText(AddRider.this,"Data successfully inserted",Toast.LENGTH_SHORT).show();
+
+                          Intent i1 = new Intent(AddRider.this,ViewDelivery.class);
+                          startActivity(i1);
+                      }
+                      else{
+                          Toast.makeText(AddRider.this,"Data not successfully inserted",Toast.LENGTH_SHORT).show();
+                      }
+                  }
+              }
+      );
 
 
-
-        //String s = Contact.getText().toString();
-        //num = Integer.parseInt(s);
-
-
-
-        long val = dbhelperdelivery.addRiderInfo(RiderID.getText().toString(),RiderName.getText().toString(),VehicleNum.getText().toString());
-
-        if(val>0){
-            Toast.makeText(this,"Data successfully inserted",Toast.LENGTH_SHORT).show();
-
-            Intent i1 = new Intent(AddRider.this,ViewDelivery.class);
-            startActivity(i1);
-
-        }
-        else{
-            Toast.makeText(this,"Data not successfully inserted",Toast.LENGTH_SHORT).show();
-        }
-
-    }
+   }
 }

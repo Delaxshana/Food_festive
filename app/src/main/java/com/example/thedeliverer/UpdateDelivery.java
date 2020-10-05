@@ -27,7 +27,7 @@ public class UpdateDelivery extends AppCompatActivity {
 
                 Context context = getApplicationContext();
                 CharSequence message = "Delivery Updated";
-                int duration = Toast.LENGTH_SHORT;
+                int duration = Toast.LENGTH_LONG;
                 Toast toast = Toast.makeText(context, message, duration);
                 toast.show();
             }

@@ -26,7 +26,7 @@ public class AddDelivery extends AppCompatActivity {
 
                 Context context = getApplicationContext();
                 CharSequence message = "Delivery Added";
-                int duration = Toast.LENGTH_SHORT;
+                int duration = Toast.LENGTH_LONG;
                 Toast toast = Toast.makeText(context, message, duration);
                 toast.show();
             }
