@@ -1,63 +1,83 @@
 package com.example.thedeliverer;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.thedeliverer.Database.DBHelperDelivery;
+import com.example.thedeliverer.Database.ObjectDelivery;
+import com.example.thedeliverer.Database.TableControllerDelivery;
+
+import org.json.JSONException;
+
+import java.util.ArrayList;
 
 public class UpdateDelivery extends AppCompatActivity {
-EditText Name,ID,Contact;
+
+    EditText order,riderID,riderName,contact,id;
+    Button update;
+    DBHelperDelivery mydb;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_delivery);
 
+        //Initializing variables with resource values
+        mydb = new DBHelperDelivery(this);
+        id = findViewById(R.id.delivIDUpdate);
+        riderID = findViewById(R.id.riderIDupdate);
+        contact = findViewById(R.id.contactUpdate);
+        update = findViewById(R.id.updateDeliv);
 
-        Button btnUpdate = this.findViewById(R.id.updateDeliv);
-
-        ID = findViewById(R.id.riderIDupdate);
-        Name = findViewById(R.id.nameUpdate);
-        Contact = findViewById(R.id.contactUpdate);
-
-
-      // btnUpdate.setOnClickListener(new View.OnClickListener(){
-        //    @Override
-          //  public void onClick(View view) {
-            //    Intent i1 = new Intent(UpdateDelivery.this,ViewDelivery.class);
-              //  startActivity(i1);
-
-                //Context context = getApplicationContext();
-                //CharSequence message = "Delivery Updated";
-                //int duration = Toast.LENGTH_LONG;
-                //Toast toast = Toast.makeText(context, message, duration);
-                //toast.show();
-
-
-           // }
-        //});
-    }
-
-    public void updateData(View view){
-        DBHelperDelivery dbHelper = new DBHelperDelivery(this);
-
-        int val = dbHelper.updateDeliveryInfo(ID.getText().toString(),Name.getText().toString(),Contact.getText().toString());
-
-        Intent i2 = new Intent(UpdateDelivery.this,ViewDelivery.class);
-        if (val>0){
-            Toast.makeText(this, "Data updated successfully", Toast.LENGTH_SHORT).show();
-        } else{
-            Toast.makeText(this, "Data did not update!", Toast.LENGTH_SHORT).show();
+        //Checking whether contact number's digits are not less than 10
+        if (contact.length()<10) {
+            contact.setError("Enter a correct mobile number");
         }
 
-        startActivity(i2);
+        //Calling method
+        UpdateDeliveryData();
+
+
+        }
+
+        //Method to updae details in activity
+    public void UpdateDeliveryData () {
+
+
+        update.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        //update method called from dbHelperDelivery
+                        boolean isUpdate = mydb.updateDelivery(id.getText().toString(), riderID.getText().toString(), contact.getText().toString());
+
+
+                        //checking whether updated or not
+                        if (isUpdate = true) {
+                            Toast.makeText(UpdateDelivery.this, "Data successfully updated", Toast.LENGTH_SHORT).show();
+
+                            Intent i1 = new Intent(UpdateDelivery.this, ViewDelivery.class);
+                            startActivity(i1);
+                        } else {
+                            Toast.makeText(UpdateDelivery.this, "Data not successfully updated", Toast.LENGTH_SHORT).show();
+                        }
+
+
+                    }
+                }
+        );
+
 
     }
-}
+
+    }
+
+

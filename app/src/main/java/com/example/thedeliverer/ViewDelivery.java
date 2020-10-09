@@ -1,90 +1,153 @@
 package com.example.thedeliverer;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
+import android.widget.LinearLayout;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
 
-import com.example.thedeliverer.Database.DBHelperDelivery;
+import com.example.thedeliverer.Database.ObjectDelivery;
+import com.example.thedeliverer.Database.OnLongClickListenerDelivery;
+import com.example.thedeliverer.Database.TableControllerDelivery;
+
+import java.util.List;
 
 public class ViewDelivery extends AppCompatActivity {
 
-    DBHelperDelivery db;
-    Button btn;
+
+
+
+    Button btnUpdate,btnRider,btnViewRider,btnDelivery;
+    TextView textViewRecordCount;
+   LinearLayout linearLayoutRecords;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_delivery);
 
-         db = new DBHelperDelivery(this);
-         btn = findViewById(R.id.View);
-        Button btnRider = this.findViewById(R.id.AddRider);
-        Button btnDelivery = this.findViewById(R.id.AddDel);
+         //Initializing buttons with resource values
+         btnRider = this.findViewById(R.id.AddRider);
+         btnDelivery = this.findViewById(R.id.AddDel);
+         btnUpdate = this.findViewById(R.id.Update);
+        btnViewRider = this.findViewById(R.id.ViewRider);
 
-        btnRider.setOnClickListener(new View.OnClickListener(){
+        //Intializing text view and linear layout with reosurce values
+        textViewRecordCount = this.findViewById(R.id.count);
+        linearLayoutRecords = this.findViewById(R.id.records);
+
+
+        //Button click events of the buttons
+        btnRider.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i1 = new Intent(ViewDelivery.this,AddRider.class);
+                Intent i1 = new Intent(ViewDelivery.this, AddRider.class);
                 startActivity(i1);
             }
         });
 
-        btnDelivery.setOnClickListener(new View.OnClickListener(){
+        btnDelivery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i2 = new Intent(ViewDelivery.this,AddDelivery.class);
+                Intent i2 = new Intent(ViewDelivery.this, AddDelivery.class);
                 startActivity(i2);
             }
         });
 
-        viewAll();
+        btnUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i2 = new Intent(ViewDelivery.this, UpdateDelivery.class);
+                startActivity(i2);
+            }
+        });
+
+        btnViewRider.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i2 = new Intent(ViewDelivery.this, ViewRiders.class);
+                startActivity(i2);
+            }
+        });
+
+
+        //calling methods
+        countRecords();
+        readRecords();
+    }
+
+    //method to display numner of records in delivery table
+    public void countRecords()
+    {
+        int recordCount = new TableControllerDelivery(this).count();
+        TextView textViewRecordCount = (TextView) findViewById(R.id.count);
+        textViewRecordCount.setText(recordCount + " records found.");
 
     }
 
-    public void viewAll() {
-        btn.setOnClickListener(
-                new View.OnClickListener(){
-                    @Override
-                    public void onClick(View view) {
-                        Cursor res = db.getDeliveryData();
-                        StringBuffer buffer = new StringBuffer();
 
-                        while(res.moveToNext()){
-                            buffer.append("ID: "+res.getString(0)+ "\n");
-                            buffer.append("RiderID: "+res.getString(1)+ "\n");
-                            buffer.append("RiderName: "+res.getString(2)+ "\n");
-                            buffer.append("Contact: "+res.getString(3)+ "\n\n");
+    //method to display read records from database
+        public void readRecords(){
+
+        linearLayoutRecords.removeAllViews();
+
+        //Creating deliveries array
+            List<ObjectDelivery> deliveries = new TableControllerDelivery(this).read();
+
+            if (deliveries.size() > 0) {
+
+                for (ObjectDelivery obj : deliveries) {
+
+                    //Intializing variables in deliveries object array
+                    int deliveryID = obj.id;
+                    String orderNo = obj.orderNo;
+                    String riderID = obj.riderID;
+                    String contact = obj.contact;
+
+                    //Displaying content
+                    String textViewContents = "Delivery ID: " +deliveryID+"\n" +"OrderNo: "+orderNo+"\n"+"RiderID: "+riderID+"\n"+"Contact: "+contact+"\n\n"+"---------------------------------------------------------------------------------------------";
 
 
+                    TextView textViewDeliveryItem= new TextView(this);
+                    textViewDeliveryItem.setPadding(0, 10, 0, 10);
+                    textViewDeliveryItem.setText(textViewContents);
+                    textViewDeliveryItem.setTag(deliveryID);
 
-                        }
+                    //Calling OnLongClickListner class to do the delete function
+                    textViewDeliveryItem.setOnLongClickListener(new OnLongClickListenerDelivery());
 
-                        String Message = buffer.toString();
-                        showMessage("Data",Message);
 
-                    }
+                    linearLayoutRecords.addView(textViewDeliveryItem);
+
                 }
-        );
+
+            }
+
+            else {
+
+                TextView locationItem = new TextView(this);
+                locationItem.setPadding(8, 8, 8, 8);
+                //locationItem.setText("No records yet.");
+                linearLayoutRecords.addView(locationItem);
+
+            }
+
+        }
+
+
+
+
+
+
     }
 
-    public void showMessage(String title, String Message){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(title);
-        builder.setMessage(Message);
-        builder.setCancelable(true);
-
-
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();;
-    }
 
 
 
@@ -95,4 +158,3 @@ public class ViewDelivery extends AppCompatActivity {
 
 
 
-}

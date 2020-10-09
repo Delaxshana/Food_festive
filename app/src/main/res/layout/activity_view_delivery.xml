@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFD500"
+    android:background="#00FFD500"
     tools:context=".ViewDelivery">
 
 
@@ -26,211 +26,81 @@
         android:id="@+id/AddDel"
         android:layout_width="141dp"
         android:layout_height="44dp"
-        android:background="#FF5622"
+        android:layout_marginTop="60dp"
+        android:background="#FFC107"
         android:text="@string/AddDeliveryBtn"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.133"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.125" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/addDel"
-        android:layout_width="141dp"
-        android:layout_height="44dp"
-        android:background="#FF5622"
-        android:text="@string/DeleteDeliveryBtn"
-        android:textColor="@android:color/background_light"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.133"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.228" />
 
     <Button
         android:id="@+id/AddRider"
-        android:layout_width="132dp"
-        android:layout_height="46dp"
-        android:background="#FF5622"
+        android:layout_width="149dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="10dp"
+        android:background="#FFC107"
         android:text="@string/AddRiderBtnV"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.849"
+        app:layout_constraintHorizontal_bias="0.862"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.125" />
+        app:layout_constraintTop_toBottomOf="@+id/Update"
+        app:layout_constraintVertical_bias="0.029" />
 
     <Button
-        android:id="@+id/addRider"
-        android:layout_width="132dp"
-        android:layout_height="46dp"
-        android:background="#FF5622"
-        android:text="@string/UpdateDeliveryBtn"
+        android:id="@+id/Update"
+        android:layout_width="158dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        android:background="#FFC107"
+        android:text="@string/updateDelivery"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.849"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.226" />
-
-    <TableLayout
-        android:id="@+id/tableLayout"
-        android:layout_width="409dp"
-        android:layout_height="358dp"
-        android:stretchColumns="1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.721">
-
-        <TableRow>
-
-            <CheckBox
-                android:id="@+id/checkBox4"
-                android:layout_width="26dp"
-                android:layout_height="26dp" />
-
-            <TextView
-                android:layout_column="1"
-                android:padding="3dip"
-                android:text="Order no" />
-
-            <TextView
-                android:gravity="right"
-                android:padding="3dip"
-                android:text="orderno1" />
-
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:layout_column="1"
-                android:padding="3dip"
-                android:text="Rider ID" />
-
-            <TextView
-                android:gravity="right"
-                android:padding="3dip"
-                android:text="RiderID1" />
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:layout_column="1"
-                android:padding="3dip"
-                android:text="Rider Name" />
-
-            <TextView
-                android:gravity="right"
-                android:padding="3dip"
-                android:text="name" />
-        </TableRow>
-
-
-        <TableRow>
-
-            <TextView
-                android:layout_width="294dp"
-                android:layout_height="96dp"
-                android:layout_column="1"
-                android:padding="3dip"
-                android:text="Contact number" />
-
-            <TextView
-                android:gravity="right"
-                android:padding="3dip"
-                android:text="123456789" />
-        </TableRow>
-
-        <View
-            android:layout_height="2dip"
-            android:background="#FF909090" />
-
-        <TableRow>
-
-
-            <CheckBox
-                android:id="@+id/checkBox"
-                android:layout_width="26dp"
-                android:layout_height="26dp" />
-
-            <TextView
-                android:layout_column="1"
-                android:padding="3dip"
-                android:text="Order no" />
-
-            <TextView
-                android:gravity="right"
-                android:padding="3dip"
-                android:text="orderno2" />
-
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:layout_column="1"
-                android:padding="3dip"
-                android:text="Rider ID" />
-
-            <TextView
-                android:gravity="right"
-                android:padding="3dip"
-                android:text="RiderID2" />
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:layout_column="1"
-                android:padding="3dip"
-                android:text="Rider Name" />
-
-            <TextView
-                android:gravity="right"
-                android:padding="3dip"
-                android:text="name1" />
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:layout_width="294dp"
-                android:layout_height="96dp"
-                android:layout_column="1"
-                android:padding="3dip"
-                android:text="Contact number" />
-
-            <TextView
-                android:gravity="right"
-                android:padding="3dip"
-                android:text="023456789" />
-        </TableRow>
-    </TableLayout>
-
-    <Button
-        android:id="@+id/View"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="TextView"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ViewRider" />
+
+    <LinearLayout
+        android:id="@+id/records"
+        android:layout_width="414dp"
+        android:layout_height="386dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/count"></LinearLayout>
+
+    <Button
+        android:id="@+id/ViewRider"
+        android:layout_width="136dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="32dp"
+        android:background="#FFC107"
+        android:text="@string/Riders"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AddDel" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

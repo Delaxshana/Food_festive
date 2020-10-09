@@ -11,13 +11,17 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.thedeliverer.Database.DBHelperDelivery;
+import com.example.thedeliverer.Database.ObjectDelivery;
+import com.example.thedeliverer.Database.TableControllerDelivery;
 
 public class AddDelivery extends AppCompatActivity {
 
-    EditText ID,RiderID,RiderName;
+    EditText ID,RiderID;
     EditText Contact;
     Button btnDeliv;
     DBHelperDelivery mydb;
+
+
 
 
     @Override
@@ -25,36 +29,58 @@ public class AddDelivery extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_delivery);
 
-
+        //Intializing variables with respective resource values
         mydb = new DBHelperDelivery(this);
 
         ID = findViewById(R.id.addOrder);
         RiderID=findViewById(R.id.addRiderID);
-        RiderName=findViewById(R.id.addRiderName);
         Contact = findViewById(R.id.addContactNumber);
         btnDeliv = (Button)this.findViewById(R.id.AddDeliv);
 
+        //Checking whether phone number is valid
+        if (Contact.length()<10) {
+            Contact.setError("Enter a right mobile number");
+        }
+
+        if (ID.equals("") || ID.equals(null)) {
+            ID.setError("Required");
+        }
+
+        if (RiderID.equals("") || RiderID.equals(null)) {
+            RiderID.setError("Required");
+        }
+
+
+ //calling method
         addDeliveryData();
 
     }
 
-    public void addDeliveryData (){
+    //method to add data from activity
+    public void addDeliveryData () {
 
         btnDeliv.setOnClickListener(
-                new View.OnClickListener(){
+                new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        boolean isInserted = mydb.insertRider(ID.getText().toString(),RiderID.getText().toString(),RiderName.getText().toString(),Contact.getText().toString());
 
-                        if(isInserted = true){
-                            Toast.makeText(AddDelivery.this,"Data successfully inserted",Toast.LENGTH_SHORT).show();
+                        //Intializing read values from activity with vaiables of delivery object
+                        ObjectDelivery objectDelivery = new ObjectDelivery();
+                        objectDelivery.orderNo = ID.getText().toString();
+                        objectDelivery.riderID = RiderID.getText().toString();
+                        objectDelivery.contact =  Contact.getText().toString();;
 
-                            Intent i1 = new Intent(AddDelivery.this,ViewDelivery.class);
+                        boolean createSuccessful = new TableControllerDelivery(AddDelivery.this).create(objectDelivery);
+                        if (createSuccessful = true) {
+                            Toast.makeText(AddDelivery.this, "Data successfully inserted", Toast.LENGTH_SHORT).show();
+
+                            Intent i1 = new Intent(AddDelivery.this, ViewDelivery.class);
                             startActivity(i1);
+                        } else {
+                            Toast.makeText(AddDelivery.this, "Data not successfully inserted", Toast.LENGTH_SHORT).show();
                         }
-                        else{
-                            Toast.makeText(AddDelivery.this,"Data not successfully inserted",Toast.LENGTH_SHORT).show();
-                        }
+
+
                     }
                 }
         );
@@ -67,4 +93,6 @@ public class AddDelivery extends AppCompatActivity {
 
 
 
-}
+
+
+    }
