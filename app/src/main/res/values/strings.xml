@@ -28,9 +28,16 @@
     <string name="title_home">Home</string>
     <string name="back">BACK</string>
     <string name="title_dashboard">Dashboard</string>
-    <string name="item1">Cauliflower rice with spicy curry</string>
+    <string name="item1">Cauliflower rice with spicy curry </string>
     <string name="item2">Craving Chicken Fried rice with gravy </string>
     <string name="item3">Seafood Supremo Thin Crust Pizza Large </string>
+    <string-array name="itemTypeDropdown">
+        <item>Main Dish</item>
+        <item>Dessert</item>
+        <item>Backey</item>
+        <item>Pizza</item>
+
+    </string-array>
 
 
 </resources>

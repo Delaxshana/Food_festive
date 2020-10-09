@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.thedeliverer.adminLogin"
+    android:background="@color/back"
     android:gravity="center">
 
     <LinearLayout
@@ -43,7 +44,7 @@
             android:id="@+id/login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/themeMain"
+            android:background="@drawable/designbutton"
             android:textColor="@color/black"
             android:text="@string/login"
             android:layout_marginVertical="10dp"/>
@@ -53,7 +54,7 @@
             android:id="@+id/user"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/themeMain"
+            android:background="@drawable/designbutton"
             android:textColor="@color/black"
             android:text="@string/userLogin"
             android:layout_marginVertical="10dp"/>

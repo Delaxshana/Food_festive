@@ -59,5 +59,11 @@ public class Login extends AppCompatActivity {
 
 
     }
+    /*
+    public boolean readInfo (String un, String pw) throws SQLException {
+
+    }
+    */
+
 
 }

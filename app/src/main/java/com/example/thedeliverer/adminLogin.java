@@ -36,7 +36,7 @@ public class adminLogin extends AppCompatActivity {
     }
     public void validate(String name, String password){
         if(name.equals("Admin")&& password.equals("123")) {
-            Intent intent = new Intent(adminLogin.this, dashboard.class);
+            Intent intent = new Intent(adminLogin.this, adminDashboard.class);
             startActivity(intent);
         }
 
