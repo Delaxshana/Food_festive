@@ -1,3 +1,7 @@
+//IT number - IT19085104
+//name - Somawasna R.P.
+//This is for delivery component
+
 package com.example.thedeliverer;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,8 +11,6 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.ListAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.thedeliverer.Database.ObjectDelivery;
@@ -20,11 +22,11 @@ import java.util.List;
 public class ViewDelivery extends AppCompatActivity {
 
 
+    //Variables
 
-
-    Button btnUpdate,btnRider,btnViewRider,btnDelivery;
+    Button btnUpdateDelivery,btnAddRider,btnViewRider,btnAddDelivery;
     TextView textViewRecordCount;
-   LinearLayout linearLayoutRecords;
+    LinearLayout linearLayoutRecords;
 
 
     @Override
@@ -34,18 +36,18 @@ public class ViewDelivery extends AppCompatActivity {
         setContentView(R.layout.activity_view_delivery);
 
          //Initializing buttons with resource values
-         btnRider = this.findViewById(R.id.AddRider);
-         btnDelivery = this.findViewById(R.id.AddDel);
-         btnUpdate = this.findViewById(R.id.Update);
-        btnViewRider = this.findViewById(R.id.ViewRider);
+         btnAddRider = this.findViewById(R.id.AddRider);
+         btnAddDelivery = this.findViewById(R.id.AddDel);
+         btnUpdateDelivery = this.findViewById(R.id.Update);
+         btnViewRider = this.findViewById(R.id.ViewRider);
 
-        //Intializing text view and linear layout with reosurce values
+        //Initializing text view and linear layout with resource values
         textViewRecordCount = this.findViewById(R.id.count);
         linearLayoutRecords = this.findViewById(R.id.records);
 
 
         //Button click events of the buttons
-        btnRider.setOnClickListener(new View.OnClickListener() {
+        btnAddRider.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i1 = new Intent(ViewDelivery.this, AddRider.class);
@@ -53,7 +55,7 @@ public class ViewDelivery extends AppCompatActivity {
             }
         });
 
-        btnDelivery.setOnClickListener(new View.OnClickListener() {
+        btnAddDelivery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i2 = new Intent(ViewDelivery.this, AddDelivery.class);
@@ -61,7 +63,7 @@ public class ViewDelivery extends AppCompatActivity {
             }
         });
 
-        btnUpdate.setOnClickListener(new View.OnClickListener() {
+        btnUpdateDelivery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i2 = new Intent(ViewDelivery.this, UpdateDelivery.class);
@@ -83,7 +85,7 @@ public class ViewDelivery extends AppCompatActivity {
         readRecords();
     }
 
-    //method to display numner of records in delivery table
+    //method to display number of records in delivery table
     public void countRecords()
     {
         int recordCount = new TableControllerDelivery(this).count();
@@ -93,7 +95,7 @@ public class ViewDelivery extends AppCompatActivity {
     }
 
 
-    //method to display read records from database
+    //method to display records from delivery table
         public void readRecords(){
 
         linearLayoutRecords.removeAllViews();
@@ -105,7 +107,7 @@ public class ViewDelivery extends AppCompatActivity {
 
                 for (ObjectDelivery obj : deliveries) {
 
-                    //Intializing variables in deliveries object array
+                    //Initializing variables in deliveries object array
                     int deliveryID = obj.id;
                     String orderNo = obj.orderNo;
                     String riderID = obj.riderID;
@@ -120,7 +122,7 @@ public class ViewDelivery extends AppCompatActivity {
                     textViewDeliveryItem.setText(textViewContents);
                     textViewDeliveryItem.setTag(deliveryID);
 
-                    //Calling OnLongClickListner class to do the delete function
+                    //Calling OnLongClickListener class to do the delete function
                     textViewDeliveryItem.setOnLongClickListener(new OnLongClickListenerDelivery());
 
 
@@ -134,7 +136,6 @@ public class ViewDelivery extends AppCompatActivity {
 
                 TextView locationItem = new TextView(this);
                 locationItem.setPadding(8, 8, 8, 8);
-                //locationItem.setText("No records yet.");
                 linearLayoutRecords.addView(locationItem);
 
             }

@@ -1,3 +1,6 @@
+//IT number - IT19085104
+//Name - Somawansa R.P.
+//This is for delivery component
 package com.example.thedeliverer;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,17 +19,20 @@ import java.util.List;
 public class ViewRiders extends AppCompatActivity {
 
 LinearLayout linearLayoutRecords;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_riders);
 
-        //Initializing variables with resourc values
+        //Initializing variables with resource values
         linearLayoutRecords = findViewById(R.id.riderRecords);
 
         //Calling method
         readRecords();
     }
+
+
 
     //Method to view records on activity
     public void readRecords(){
@@ -41,12 +47,13 @@ LinearLayout linearLayoutRecords;
 
                 //Initializing rider objects in rider array
               String riderID = obj.riderID;
-              String riderName = obj.riderName;
+              String riderFirstName = obj.riderFirstName;
+              String riderLastName = obj.riderLastName;
               String contact = obj.contact;
               String vehicleNum = obj.vehicleNum;
 
               //Formatting it to view on activity
-                String textViewContents = "Rider ID: " +riderID+"\n" +"Rider Name: "+riderName+"\n"+"Contact: "+contact+"\n"+"Vehicle Number: "+vehicleNum+"\n\n"+"----------------------------------";
+                String textViewContents = "Rider ID: " +riderID+"\n" +"Rider firstname: "+riderFirstName+"\n"+"Rider lastname: "+riderLastName+"\n"+"Contact: "+contact+"\n"+"Vehicle Number: "+vehicleNum+"\n\n"+"------------------------------------------------------------------------------";
 
 
                 TextView textViewRiderItem= new TextView(this);

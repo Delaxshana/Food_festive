@@ -1,3 +1,6 @@
+//IT number - IT19085104
+//Name - Somawansa R.P.
+//This is fro delivery component
 package com.example.thedeliverer.Database;
 
 import android.content.ContentValues;
@@ -48,7 +51,8 @@ public class TableControllerDelivery extends DBHelperDelivery {
         ContentValues values = new ContentValues();
 
         values.put("ID", objectRider.riderID);
-        values.put("NAME", objectRider.riderName);
+        values.put("FIRSTNAME", objectRider.riderFirstName);
+        values.put("LASTNAME",objectRider.riderLastName);
         values.put("CONTACT", objectRider.contact);
         values.put("VEHICLE", objectRider.vehicleNum);
 
@@ -137,7 +141,8 @@ public class TableControllerDelivery extends DBHelperDelivery {
             do {
 
                 String riderID = cursor.getString(cursor.getColumnIndex("ID"));
-                String riderName = cursor.getString(cursor.getColumnIndex("NAME"));
+                String riderFirstName = cursor.getString(cursor.getColumnIndex("FIRSTNAME"));
+                String riderLastName = cursor.getString(cursor.getColumnIndex("LASTNAME"));
                 String contact = cursor.getString(cursor.getColumnIndex("CONTACT"));
                 String vehicleNum = cursor.getString(cursor.getColumnIndex("VEHICLE"));
 
@@ -145,7 +150,8 @@ public class TableControllerDelivery extends DBHelperDelivery {
                 ObjectRider objectrider = new ObjectRider();
 
                 objectrider.riderID = riderID;
-                objectrider.riderName=riderName;
+                objectrider.riderFirstName=riderFirstName;
+                objectrider.riderLastName=riderLastName;
                 objectrider.contact=contact;
                 objectrider.vehicleNum=vehicleNum;
 
@@ -160,6 +166,20 @@ public class TableControllerDelivery extends DBHelperDelivery {
         db.close();
 
         return recordsList;
+
+    }
+
+    //method to update delivery records
+    public boolean updateDelivery(String id,String riderID,String Contact){
+        SQLiteDatabase db = getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(TABLE2_COLUMN_1,id);
+        values.put(TABLE2_COLUMN_3,riderID);
+        values.put(TABLE2_COLUMN_5,Contact);
+        db.update(TABLE_NAME2,values,"ID = ?",new String[]  { id });
+
+        return true;
 
     }
 

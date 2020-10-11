@@ -1,3 +1,6 @@
+//IT number - IT19085104
+//Name - Somawansa R.P.
+//This is for delivery component
 package com.example.thedeliverer;
 
 import android.content.Intent;
@@ -22,7 +25,7 @@ public class UpdateDelivery extends AppCompatActivity {
 
     EditText order,riderID,riderName,contact,id;
     Button update;
-    DBHelperDelivery mydb;
+    TableControllerDelivery mydb;
 
 
     @Override
@@ -31,14 +34,14 @@ public class UpdateDelivery extends AppCompatActivity {
         setContentView(R.layout.activity_update_delivery);
 
         //Initializing variables with resource values
-        mydb = new DBHelperDelivery(this);
+        mydb = new TableControllerDelivery(this);
         id = findViewById(R.id.delivIDUpdate);
         riderID = findViewById(R.id.riderIDupdate);
         contact = findViewById(R.id.contactUpdate);
         update = findViewById(R.id.updateDeliv);
 
-        //Checking whether contact number's digits are not less than 10
-        if (contact.length()<10) {
+        //Checking whether contact number's digits are not less than or greater than 10
+        if (contact.length()<10 || contact.length()>10) {
             contact.setError("Enter a correct mobile number");
         }
 
@@ -48,7 +51,7 @@ public class UpdateDelivery extends AppCompatActivity {
 
         }
 
-        //Method to updae details in activity
+        //Method to update details in activity
     public void UpdateDeliveryData () {
 
 
@@ -56,7 +59,7 @@ public class UpdateDelivery extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        //update method called from dbHelperDelivery
+                        //update method called from tablecontrollerdelivery class
                         boolean isUpdate = mydb.updateDelivery(id.getText().toString(), riderID.getText().toString(), contact.getText().toString());
 
 

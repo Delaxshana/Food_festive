@@ -1,3 +1,6 @@
+//IT number - IT19085104
+//Name - Somawansa R.P.
+//This is for delivery component
 package com.example.thedeliverer.Database;
 
 import android.app.AlertDialog;
@@ -10,15 +13,14 @@ import com.example.thedeliverer.ViewDelivery;
 
 public class OnLongClickListenerDelivery implements View.OnLongClickListener {
     Context context;
-
     String id;
+
 
     //This method is used to delete a record when that record is clicked and held for a while
     @Override
     public boolean onLongClick(View view) {
 
         context = view.getContext();
-
         id = view.getTag().toString();
 
         final CharSequence[] items = { "Yes" , "No"};

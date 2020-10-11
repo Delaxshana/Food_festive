@@ -1,3 +1,6 @@
+//IT number - IT19085104
+//Name - Somawansa R.P.
+//This is for delivery component
 package com.example.thedeliverer;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,9 +24,6 @@ public class AddDelivery extends AppCompatActivity {
     Button btnDeliv;
     DBHelperDelivery mydb;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,15 +38,15 @@ public class AddDelivery extends AppCompatActivity {
         btnDeliv = (Button)this.findViewById(R.id.AddDeliv);
 
         //Checking whether phone number is valid
-        if (Contact.length()<10) {
+        if (Contact.length()<10 || Contact.length()>10) {
             Contact.setError("Enter a right mobile number");
         }
 
-        if (ID.equals("") || ID.equals(null)) {
+        if (ID.equals(null)) {
             ID.setError("Required");
         }
 
-        if (RiderID.equals("") || RiderID.equals(null)) {
+        if (RiderID.equals(null)) {
             RiderID.setError("Required");
         }
 
@@ -68,8 +68,9 @@ public class AddDelivery extends AppCompatActivity {
                         ObjectDelivery objectDelivery = new ObjectDelivery();
                         objectDelivery.orderNo = ID.getText().toString();
                         objectDelivery.riderID = RiderID.getText().toString();
-                        objectDelivery.contact =  Contact.getText().toString();;
+                        objectDelivery.contact =  Contact.getText().toString();
 
+                        //Checking whether inserted or not
                         boolean createSuccessful = new TableControllerDelivery(AddDelivery.this).create(objectDelivery);
                         if (createSuccessful = true) {
                             Toast.makeText(AddDelivery.this, "Data successfully inserted", Toast.LENGTH_SHORT).show();

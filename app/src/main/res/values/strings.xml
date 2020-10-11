@@ -22,4 +22,6 @@
     <string name="Riders">RIDERS</string>
     <string name="updateDelivery">UPDATE DELIVERY</string>
     <string name="titleRider">Riders</string>
+    <string name="RiderFirstName">First Name</string>
+    <string name="RiderLastName">Last Name</string>
 </resources>

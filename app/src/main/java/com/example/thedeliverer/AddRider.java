@@ -1,3 +1,7 @@
+//IT number - IT19085104
+//Name - Somawansa R.P.
+//This is for delivery component
+
 package com.example.thedeliverer;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,7 +20,7 @@ import com.example.thedeliverer.Database.TableControllerDelivery;
 
 public class AddRider extends AppCompatActivity {
 
-    EditText RiderID,RiderName,VehicleNum;
+    EditText RiderID,RiderFirstName,RiderLastName,VehicleNum;
     EditText Contact;
     Button btnRide;
     DBHelperDelivery mydb;
@@ -31,15 +35,17 @@ public class AddRider extends AppCompatActivity {
 
        //Initializing text views
         RiderID=findViewById(R.id.riderID);
-        RiderName=findViewById(R.id.riderName);
-       Contact = findViewById(R.id.RiderContact);
+        RiderFirstName=findViewById(R.id.riderName);
+        RiderLastName = findViewById(R.id.riderLastName);
+        Contact = findViewById(R.id.RiderContact);
         VehicleNum=findViewById(R.id.VehicleNum);
+
 
         //Initializing button
         btnRide = (Button)this.findViewById(R.id.AddRide);
 
         //Checking whether phone number's length is not less than 10
-        if (Contact.length()<10) {
+        if (Contact.length()<10 || Contact.length()>10) {
             Contact.setError("Enter a right mobile number");
         }
 
@@ -62,13 +68,14 @@ public class AddRider extends AppCompatActivity {
                         //Initializing of delivery object variables with values from activity
                         ObjectRider objectRider = new ObjectRider();
                         objectRider.riderID = RiderID.getText().toString();
-                        objectRider.riderName = RiderName.getText().toString();
-                        objectRider.contact =  Contact.getText().toString();;
+                        objectRider.riderFirstName = RiderFirstName.getText().toString();
+                        objectRider.riderLastName=RiderLastName.getText().toString();
+                        objectRider.contact =  Contact.getText().toString();
                         objectRider.vehicleNum = VehicleNum.getText().toString();
 
 
 
-                        //Checking whether inse
+                        //Checking whether inserted or not
                         boolean createSuccessful = new TableControllerDelivery(AddRider.this).createRider(objectRider);
                         if (createSuccessful = true) {
                             Toast.makeText(AddRider.this, "Data successfully inserted", Toast.LENGTH_SHORT).show();

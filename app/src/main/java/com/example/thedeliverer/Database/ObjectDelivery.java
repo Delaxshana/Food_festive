@@ -1,3 +1,7 @@
+//IT number - IT19085104
+//Name - Somawansa R.P.
+//This is for delivery component
+
 package com.example.thedeliverer.Database;
 
 public class ObjectDelivery {
@@ -31,8 +35,6 @@ public class ObjectDelivery {
     public void setRiderID(String riderID) {
         this.riderID = riderID;
     }
-
-
 
     public String getContact() {
         return contact;
