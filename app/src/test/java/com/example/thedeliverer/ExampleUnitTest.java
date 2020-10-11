@@ -16,21 +16,5 @@ import static org.junit.Assert.*;
  */
 public class ExampleUnitTest {
 
-    private TableControllerDelivery tableControllerDelivery;
-    private Context context;
 
-
-    @Before
-    public void setUp(){
-        tableControllerDelivery = new TableControllerDelivery(context);
-    }
-
-    //Tests whether the number of records in the delivery table initially are zero
-    @Test
-    public void testcountRecordsInitial(){
-       int result = tableControllerDelivery.count();
-
-       assertEquals(0,result);
-
-    }
 }
