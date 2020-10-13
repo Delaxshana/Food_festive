@@ -73,20 +73,58 @@ public class AddRider extends AppCompatActivity {
                         objectRider.contact =  Contact.getText().toString();
                         objectRider.vehicleNum = VehicleNum.getText().toString();
 
+                        //validations
+                        String riderID = RiderID.getText().toString().trim();
+                        String firstname = RiderFirstName.getText().toString().trim();
+                        String lastname = RiderLastName.getText().toString().trim();
+                        String contact = Contact.getText().toString().trim();
+                        String vehiclenum = VehicleNum.getText().toString().trim();
 
 
-                        //Checking whether inserted or not
-                        boolean createSuccessful = new TableControllerDelivery(AddRider.this).createRider(objectRider);
-                        if (createSuccessful = true) {
-                            Toast.makeText(AddRider.this, "Data successfully inserted", Toast.LENGTH_SHORT).show();
 
-                            Intent i1 = new Intent(AddRider.this, ViewDelivery.class);
-                            startActivity(i1);
-                        } else {
-                            Toast.makeText(AddRider.this, "Data not successfully inserted", Toast.LENGTH_SHORT).show();
+                        if (Contact.length()<10 || Contact.length()>10) {
+                            Contact.setError("Enter a correct mobile number");
+                        }
+
+                        if(riderID.isEmpty()){
+                            RiderID.setError("Required");
+
+                        }
+
+                        if(firstname.isEmpty()){
+                            RiderFirstName.setError("Required");
+
+                        }
+                        if(lastname.isEmpty()){
+                            RiderLastName.setError("Required");
+
+                        }
+                        if(vehiclenum.isEmpty()){
+                            VehicleNum.setError("Required");
+
                         }
 
 
+
+                        if(riderID.isEmpty() || firstname.isEmpty() || lastname.isEmpty() || vehiclenum.isEmpty() || contact.isEmpty()){
+                            Toast.makeText(AddRider.this,"Fill required fields",Toast.LENGTH_SHORT).show();
+                        }
+                        else {
+
+
+                            //Checking whether inserted or not
+                            boolean createSuccessful = new TableControllerDelivery(AddRider.this).createRider(objectRider);
+                            if (createSuccessful = true) {
+                                Toast.makeText(AddRider.this, "Data successfully inserted", Toast.LENGTH_SHORT).show();
+
+                                Intent i1 = new Intent(AddRider.this, ViewDelivery.class);
+                                startActivity(i1);
+                            } else {
+                                Toast.makeText(AddRider.this, "Data not successfully inserted", Toast.LENGTH_SHORT).show();
+                            }
+
+
+                        }
                     }
                 }
         );

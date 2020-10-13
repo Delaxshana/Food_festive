@@ -23,7 +23,7 @@ import java.util.ArrayList;
 
 public class UpdateDelivery extends AppCompatActivity {
 
-    EditText order,riderID,riderName,contact,id;
+    EditText riderID,contact,id;
     Button update;
     TableControllerDelivery mydb;
 
@@ -59,21 +59,48 @@ public class UpdateDelivery extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        //update method called from tablecontrollerdelivery class
-                        boolean isUpdate = mydb.updateDelivery(id.getText().toString(), riderID.getText().toString(), contact.getText().toString());
+
+                        //validations
+
+                        String deliveryID = id.getText().toString().trim();
+                        String Riderid = riderID.getText().toString().trim();
+                        String Contact = contact.getText().toString().trim();
 
 
-                        //checking whether updated or not
-                        if (isUpdate = true) {
-                            Toast.makeText(UpdateDelivery.this, "Data successfully updated", Toast.LENGTH_SHORT).show();
-
-                            Intent i1 = new Intent(UpdateDelivery.this, ViewDelivery.class);
-                            startActivity(i1);
-                        } else {
-                            Toast.makeText(UpdateDelivery.this, "Data not successfully updated", Toast.LENGTH_SHORT).show();
+                        if (contact.length() < 10 || contact.length() > 10) {
+                            contact.setError("Enter a correct mobile number");
+                        }
+                        if (deliveryID.isEmpty()) {
+                            id.setError("Required");
+                        }
+                        if (Riderid.isEmpty()) {
+                            riderID.setError("Required");
+                        }
+                        if(Contact.isEmpty()){
+                            contact.setError("Required");
                         }
 
 
+                        if (Riderid.isEmpty() || deliveryID.isEmpty()) {
+                            Toast.makeText(UpdateDelivery.this, "Fill required fields", Toast.LENGTH_SHORT).show();
+                        } else {
+
+                            //update method called from tablecontrollerdelivery class
+                            boolean isUpdate = mydb.updateDelivery(id.getText().toString(), riderID.getText().toString(), contact.getText().toString());
+
+
+                            //checking whether updated or not
+                            if (isUpdate = true) {
+                                Toast.makeText(UpdateDelivery.this, "Data successfully updated", Toast.LENGTH_SHORT).show();
+
+                                Intent i1 = new Intent(UpdateDelivery.this, ViewDelivery.class);
+                                startActivity(i1);
+                            } else {
+                                Toast.makeText(UpdateDelivery.this, "Data not successfully updated", Toast.LENGTH_SHORT).show();
+                            }
+
+
+                        }
                     }
                 }
         );
