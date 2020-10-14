@@ -33,6 +33,7 @@ public class adminLogin extends AppCompatActivity {
 
 
 
+
     }
     public void validate(String name, String password){
         if(name.equals("Admin")&& password.equals("123")) {

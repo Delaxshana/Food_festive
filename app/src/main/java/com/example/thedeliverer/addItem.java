@@ -10,8 +10,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class addItem extends AppCompatActivity {
-
-
         private EditText itemName,itemType,itemPrice,itemDesc;
         private Button add,back;
         DatabaseHelper myDb;
@@ -20,22 +18,12 @@ public class addItem extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_item);
-/*
-        Spinner spinner =(Spinner) findViewById(R.id.itemTypeOption);
-        List<String> itemOptions = new ArrayList<String>();
-        itemOptions.add("Main");
-        itemOptions.add("Dessert");
-        itemOptions.add("Backery");
-        itemOptions.add("Pizza");
+        myDb = new DatabaseHelper(this);
 
-        ArrayAdapter<String> dataAdapter= new ArrayAdapter<String>(this,android.R.layout.activity_list_item,itemOptions);
-        dataAdapter.setDropDownViewResource(android.R.layout.activity_list_item);
-        spinner.setAdapter(dataAdapter);
-*/
-        itemName = (EditText)findViewById(R.id.itemName);
-        itemType = (EditText)findViewById(R.id.itemType);
-        itemPrice = (EditText)findViewById(R.id.itemPrice);
-        itemDesc = (EditText)findViewById(R.id.itemDesc);
+        itemName = (EditText)findViewById(R.id.iName);
+        itemType = (EditText)findViewById(R.id.iType);
+        itemPrice = (EditText)findViewById(R.id.iPrice);
+        itemDesc = (EditText)findViewById(R.id.iDesc);
         add = (Button)findViewById(R.id.add);
         back = (Button)findViewById(R.id.back);
 
@@ -60,7 +48,6 @@ public class addItem extends AppCompatActivity {
 
     }
     public void addItem(){
-
         boolean result = myDb.insertItem(itemName.getText().toString(), itemType.getText().toString(),
                 itemPrice.getText().toString(), itemDesc.getText().toString());
         if (result = true) {
@@ -69,4 +56,7 @@ public class addItem extends AppCompatActivity {
             Toast.makeText(addItem.this, "Item is not added successfully", Toast.LENGTH_LONG).show();
 
     }
+
+
+
 }

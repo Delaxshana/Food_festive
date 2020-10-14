@@ -12,10 +12,12 @@ import androidx.appcompat.app.AppCompatActivity;
 public class Login extends AppCompatActivity {
     private EditText email,password;
     private Button login, register,adminLogin;
+    DatabaseHelper myDb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        myDb = new DatabaseHelper(this);
 
         email = (EditText)findViewById(R.id.email);
         password = (EditText)findViewById(R.id.password);
@@ -26,8 +28,17 @@ public class Login extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                validate(email.getText().toString(), password.getText().toString());
-                Intent intent = new Intent(Login.this,Login.class);
+               // validate(email.getText().toString(), password.getText().toString());
+              // boolean success=
+                myDb.checkUser(email.getText().toString(), password.getText().toString());
+
+              /***
+               *  if(success=true){
+               *                    Intent intent = new Intent(Login.this,dashboard.class);
+               *                }
+               *                else{
+               *                    Toast.makeText(Login.this, "Incorrect Login", Toast.LENGTH_SHORT).show();
+               *                }**/
             }
         });
 
@@ -59,11 +70,6 @@ public class Login extends AppCompatActivity {
 
 
     }
-    /*
-    public boolean readInfo (String un, String pw) throws SQLException {
-
-    }
-    */
 
 
 }
