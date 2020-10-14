@@ -4,7 +4,13 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/themeSub</item>
+
+    </style>
+
+    <style name="dashboardImage">
+        <item name="android:layout_width">398dp</item>
+        <item name="android:layout_height">191dp</item>
     </style>
 
 </resources>

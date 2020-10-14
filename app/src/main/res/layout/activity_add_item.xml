@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.thedeliverer.Register"
+    tools:context="com.example.thedeliverer.addItem"
     android:background="@color/back"
     android:gravity="center">
 
@@ -17,92 +17,65 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Register"
+            android:text="Add Item"
             android:textSize="30dp"
             android:textColor="@color/black"
             android:layout_marginVertical="10dp"/>
 
         <EditText
-            android:id="@+id/fName"
+            android:id="@+id/iName"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginBottom="10dp"
             android:paddingHorizontal="10dp"
-            android:hint="FIRST NAME"
+            android:hint="ITEM NAME"
             />
 
         <EditText
-            android:id="@+id/lName"
+            android:id="@+id/iDesc"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginBottom="10dp"
             android:paddingHorizontal="10dp"
-            android:hint="LAST NAME"
+            android:hint="ITEM DESCRIPTION"
             />
 
         <EditText
-            android:id="@+id/phone"
+            android:id="@+id/iPrice"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginBottom="10dp"
             android:paddingHorizontal="10dp"
-            android:inputType="number"
-            android:hint="PHONE"
+            android:hint="ITEM PRICE"
             />
 
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/iType"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginBottom="10dp"
             android:paddingHorizontal="10dp"
-            android:hint="EMAIL"
+            android:hint="ITEM TYPE"
             />
 
 
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginBottom="10dp"
-            android:paddingHorizontal="10dp"
-            android:hint="PASSWORD"
-            android:inputType="textPassword"
-            />
 
-
-        <EditText
-            android:id="@+id/cPassword"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginBottom="10dp"
-            android:paddingHorizontal="10dp"
-            android:hint="CONFORM PASSOWRD"
-            android:inputType="textPassword"
-            />
-
-        <CheckBox
-            android:id="@+id/checkBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Show Password" />
         <Button
-            android:id="@+id/register"
+            android:id="@+id/add"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/designbutton"
             android:textColor="@color/black"
-            android:text="@string/register"
+            android:text="@string/addAddress"
             android:layout_marginVertical="10dp"/>
 
         <Button
-            android:id="@+id/login"
+            android:id="@+id/back"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/designbutton"
             android:textColor="@color/black"
-            android:text="@string/login"/>
-
+            android:text="@string/back"/>
 
     </LinearLayout>
 

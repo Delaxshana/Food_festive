@@ -24,4 +24,42 @@
     <string name="titleRider">Riders</string>
     <string name="RiderFirstName">First Name</string>
     <string name="RiderLastName">Last Name</string>
+    <string name="user_name">User name</string>
+    <string name="password">Password</string>
+    <string name="login">LOGIN</string>
+    <string name="already_have_an_account">Already have an account</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="last_name">TextView</string>
+    <string name="first_name">First Name</string>
+    <string name="last__name">Last Name</string>
+    <string name="email">Email</string>
+    <string name="phone_number">Phone number</string>
+    <string name="register">REGISTER</string>
+    <string name="address">No:01.Wasalla Road</string>
+    <string name="pizza">Pizza</string>
+    <string name="todo">TODO</string>
+    <string name="todo1">TODO</string>
+    <string name="top_deals">Top Deals</string>
+    <string name="todo3">TODO</string>
+    <string name="edit_user">EDIT USER</string>
+    <string name="adminLogin">LOGIN AS ADMIN</string>
+    <string name="userLogin">LOGIN AS USER</string>
+    <string name="addAddress">ADD</string>
+    <string name="addLater"> ADD LATER</string>
+    <string name="add">ADD ITEM</string>
+    <string name="update">DELETE ITEM</string>
+    <string name="delete">UPDATE ITEM</string>
+    <string name="title_home">Home</string>
+    <string name="back">BACK</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="item1">Cauliflower rice with spicy curry </string>
+    <string name="item2">Craving Chicken Fried rice with gravy </string>
+    <string name="item3">Seafood Supremo Thin Crust Pizza Large </string>
+    <string-array name="itemTypeDropdown">
+        <item>Main Dish</item>
+        <item>Dessert</item>
+        <item>Backey</item>
+        <item>Pizza</item>
+
+    </string-array>
 </resources>
