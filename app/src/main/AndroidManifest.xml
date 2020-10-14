@@ -9,10 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".OrderConfirmation"></activity>
+        <activity android:name=".OrderDetails" /> 
+        <activity android:name=".FoodCart" />
         <activity android:name=".ViewRiders"></activity>
         <activity android:name=".ViewDelivery">
-
         <activity android:name=".editUser"></activity>
+
         <activity android:name=".adminDashboard" />
         <activity android:name=".deletItem" />
         <activity android:name=".updateItem" />
@@ -23,9 +26,6 @@
         <activity android:name=".pizza" />
         <activity android:name=".dessert" />
         <activity android:name=".dashboard" />
-        <activity android:name=".Register" />
-        <activity android:name=".Login" />
-        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

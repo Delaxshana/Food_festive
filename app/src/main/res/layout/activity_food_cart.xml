@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/food_cart"
+    tools:context=".FoodCart">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/app_name"
+        android:text="Your Food Cart"
+        android:textColor="#0E0E0E"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.148" />
+
+    <TableLayout
+
+        android:id="@+id/tableLayout"
+        android:layout_width="376dp"
+        android:layout_height="122dp"
+        android:stretchColumns="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.457"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.338">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/border">
+
+
+            <TextView
+                android:layout_width="159dp"
+                android:background="@drawable/border"
+                android:hint="Item"
+                android:padding="3dp"
+                android:text="@string/item_name"
+                android:textColor="#0E0E0E"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="73dp"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="@string/item_quantity"
+                android:textColor="#0E0E0E"
+                android:textStyle="bold" />
+
+            <TextView
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="@string/item_size"
+                android:textColor="#0E0E0E"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/border">
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/item1"-->
+            <!--                android:layout_width="123dp"-->
+            <!--                android:layout_height="match_parent"-->
+            <!--                android:background="@drawable/border"-->
+            <!--                android:padding="3dp"-->
+            <!--                android:text="item1" />-->
+            <EditText
+                android:id="@+id/item1"
+                android:autofillHints="number"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:hint="item1"
+                android:inputType="text"
+                android:padding="3dp"
+                android:text=""
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/quantity1"
+                android:autofillHints="number"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:hint="1"
+                android:inputType="number"
+                android:padding="3dp"
+                android:text=""
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/size1"
+                android:autofillHints="text"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:hint="small"
+                android:inputType="text"
+                android:padding="3dp"
+                android:text=""
+                android:textSize="12sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/border">
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/item2"-->
+            <!--                android:background="@drawable/border"-->
+            <!--                android:padding="3dp"-->
+            <!--                android:text="item2" />-->
+
+            <EditText
+                android:id="@+id/item2"
+                android:autofillHints="number"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:hint="item2"
+                android:inputType="text"
+                android:padding="3dp"
+                android:text=""
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/quantity2"
+                android:autofillHints="number"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:hint="1"
+                android:inputType="number"
+                android:padding="3dp"
+                android:text=""
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/size2"
+                android:autofillHints="text"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:hint="small"
+                android:inputType="text"
+                android:padding="3dp"
+                android:text=""
+                android:textSize="12sp" />
+
+        </TableRow>
+
+        <TableRow>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/border">
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/item3"-->
+            <!--                android:background="@drawable/border"-->
+            <!--                android:padding="3dp"-->
+            <!--                android:text="item3" />-->
+
+            <EditText
+                android:id="@+id/item3"
+                android:autofillHints="number"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:hint="item3"
+                android:inputType="text"
+                android:padding="3dp"
+                android:text=""
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/quantity3"
+                android:autofillHints="number"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:hint="1"
+                android:inputType="number"
+                android:padding="3dp"
+                android:text=""
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/size3"
+                android:autofillHints="text"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:hint="small"
+                android:inputType="text"
+                android:padding="3dp"
+                android:text=""
+                android:textSize="12sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/border">
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/item2"-->
+            <!--                android:background="@drawable/border"-->
+            <!--                android:padding="3dp"-->
+            <!--                android:text="item2" />-->
+
+            <EditText
+                android:id="@+id/item4"
+                android:autofillHints="number"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:hint="item4"
+                android:inputType="text"
+                android:padding="3dp"
+                android:text=""
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/quantity4"
+                android:autofillHints="number"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:hint="1"
+                android:inputType="number"
+                android:padding="3dp"
+                android:text=""
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/size4"
+                android:autofillHints="text"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:hint="small"
+                android:inputType="text"
+                android:padding="3dp"
+                android:text=""
+                android:textSize="12sp" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <Button
+        android:id="@+id/btn_continue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8AC349"
+        android:onClick="addToCart"
+        android:shadowColor="#B35F5F"
+        android:text="@string/continue1_btn"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.551" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="165dp"
+        android:layout_height="48dp"
+        android:background="#4CAF50"
+        android:text="@string/continue_shopping_btn"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.648" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="44dp"
+        android:text="Please enter the quantity and size of your items"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
