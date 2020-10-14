@@ -143,15 +143,15 @@
 
     <EditText
         android:id="@+id/date_input"
-        android:layout_width="157dp"
-        android:layout_height="29dp"
+        android:layout_width="167dp"
+        android:layout_height="35dp"
         android:layout_marginStart="68dp"
         android:layout_marginLeft="68dp"
         android:autofillHints="Date"
         android:ems="10"
         android:hint="date"
         android:inputType="date"
-        android:textSize="12sp"
+        android:textSize="10sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView6"
         app:layout_constraintStart_toEndOf="@+id/textView6" />
 
@@ -183,8 +183,8 @@
 
     <EditText
         android:id="@+id/time_input"
-        android:layout_width="155dp"
-        android:layout_height="27dp"
+        android:layout_width="165dp"
+        android:layout_height="39dp"
         android:layout_marginStart="64dp"
         android:layout_marginLeft="64dp"
         android:autofillHints="time"
@@ -192,7 +192,7 @@
         android:hint="Time"
         android:inputType="time"
         android:text=""
-        android:textSize="12sp"
+        android:textSize="10sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView8"
         app:layout_constraintStart_toEndOf="@+id/textView8" />
 
