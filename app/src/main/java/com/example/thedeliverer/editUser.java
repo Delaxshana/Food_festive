@@ -34,7 +34,7 @@ public class editUser extends AppCompatActivity {
                 String lNamevalue=lName.getText().toString();
                 String phonenovalue=phone.getText().toString();
 
-                Intent intent = new Intent(editUser.this,user.class);
+                Intent intent = new Intent(editUser.this, userProfile.class);
                 intent.putExtra("firstName",fNamevalue);
                 intent.putExtra("lastName",lNamevalue);
                 intent.putExtra("phoneNo",phonenovalue);

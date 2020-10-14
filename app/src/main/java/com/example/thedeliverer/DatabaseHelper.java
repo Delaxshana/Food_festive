@@ -2,6 +2,7 @@ package com.example.thedeliverer;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -33,11 +34,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String ADDRESS_COL_3 = "streetno";
     public static final String ADDRESS_COL_4 = "city";
     public static final String ADDRESS_COL_5=  "note";
+    public static final String ADDRESS_COL_6=  "id";
 
     public DatabaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, 5);
         db = this.getWritableDatabase();
-
 
     }
 
@@ -52,14 +53,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 USER_COL_5 + " TEXT, " +
                 USER_COL_6 + " INTEGER) ");
 
-        db.execSQL("CREATE TABLE " + TABLE_ITEM + " ( " +
+        db.execSQL(" CREATE TABLE " + TABLE_ITEM + " ( " +
                 ITEM_COL_1 +  " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 ITEM_COL_2 + " TEXT, " +
                 ITEM_COL_3 + " TEXT, " +
                 ITEM_COL_5 + " TEXT, " +
-                ITEM_COL_6 + " TEXT) ");
+                ITEM_COL_6 + " TEXT ) ");
 
-        db.execSQL("CREATE TABLE " + TABLE_ADDRESS + "(EMAIL TEXT ,DOOTNO TEXT, STREETNAME TEXT,CITY TEXT,NOTE TEXT)");
+
+        db.execSQL(" CREATE TABLE " + TABLE_ADDRESS + " ( " +
+                ADDRESS_COL_6 +  " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+              //  ADDRESS_COL_1 + " TEXT, " +
+                ADDRESS_COL_2 + " TEXT, " +
+                ADDRESS_COL_3 + " TEXT, " +
+                ADDRESS_COL_4 + " TEXT," +
+                ADDRESS_COL_5 + " TEXT ) ");
+
     }
 
     @Override
@@ -78,7 +87,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             contentValues.put(ITEM_COL_3,type);
             contentValues.put(ITEM_COL_5, price);
             contentValues.put(ITEM_COL_6, desc);
-            long result = db.insert(TABLE_USER, null,contentValues);
+            long result = db.insert(TABLE_ITEM, null,contentValues);
             if(result == -1)
                 return false;
             else return true;
@@ -86,13 +95,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public boolean insertUserDetails(String fName,String lName,String email,String password){
+    public boolean insertUserDetails(String fName,String lName,String email,String password,String phoneNo){
         SQLiteDatabase db = this.getWritableDatabase();
+
         ContentValues contentValues= new ContentValues();
         contentValues.put(USER_COL_2,fName);
         contentValues.put(USER_COL_3,lName);
         contentValues.put(USER_COL_4,email);
         contentValues.put(USER_COL_5,password);
+        contentValues.put(USER_COL_6,phoneNo);
         long result=db.insert(TABLE_USER,null,contentValues);
         if(result == -1)
             return false;
@@ -102,6 +113,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public boolean insertUserAddress(String doorNo,String streetNo,String city,String note){
         SQLiteDatabase db = this.getWritableDatabase();
+
         ContentValues contentValues= new ContentValues();
         //contentValues.put(ADDRESS_COL_1,email);
         contentValues.put(ADDRESS_COL_2,doorNo);
@@ -125,6 +137,39 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return false;
         }
     }
-   
+
+    public void updateUser(User user) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(USER_COL_2, user.getFname());
+        values.put(USER_COL_3, user.getLname());
+        values.put(USER_COL_4, user.getEmail());
+        values.put(USER_COL_5, user.getPassword());
+        values.put(USER_COL_6, user.getContactNo());
+
+        db.update(TABLE_USER, values, USER_COL_1 + " = ?",
+                new String[]{String.valueOf(user.getId())});
+        db.close();
+    }
+
+
+    public boolean checkUser(String email, String password) {
+        String[] columns = {
+                USER_COL_1
+        };
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selection = USER_COL_4 + " = ?" + " AND " + USER_COL_6 + " = ?";
+        String[] selectionArgs = {email, password};
+        Cursor cursor = db.query(TABLE_USER, columns, selection, selectionArgs, null, null, null);
+        int cursorCount = cursor.getCount();
+        cursor.close();
+        db.close();
+        if (cursorCount > 0) {
+            return true;
+        }
+        return false;
+    }
+
 
 }

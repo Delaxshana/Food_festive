@@ -23,7 +23,7 @@
             android:layout_marginVertical="10dp"/>
 
         <EditText
-            android:id="@+id/itemName"
+            android:id="@+id/iName"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginBottom="10dp"
@@ -32,7 +32,7 @@
             />
 
         <EditText
-            android:id="@+id/itemDesc"
+            android:id="@+id/iDesc"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginBottom="10dp"
@@ -41,7 +41,7 @@
             />
 
         <EditText
-            android:id="@+id/itemPrice"
+            android:id="@+id/iPrice"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginBottom="10dp"
@@ -50,20 +50,14 @@
             />
 
         <EditText
-            android:id="@+id/itemType"
+            android:id="@+id/iType"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginBottom="10dp"
             android:paddingHorizontal="10dp"
             android:hint="ITEM TYPE"
             />
-        <Spinner
-            android:id="@+id/itemTypeOption"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginBottom="10dp"
-            android:paddingHorizontal="10dp"
-            android:hint="ITEM TYPE" />
+
 
 
         <Button
