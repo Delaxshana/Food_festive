@@ -1,5 +1,29 @@
 <resources>
     <string name="app_name">The Deliverer</string>
+    <string name="AddRider">Rider Registration</string>
+    <string name="RiderID">Rider ID</string>
+    <string name="RiderName">Rider Name</string>
+    <string name="RiderContact">Contact Number</string>
+    <string name="VehicleNumber">Vehicle Number</string>
+    <string name="AddRiderbtn">Add</string>
+    <string name="AddDelivery">Add Delivery</string>
+    <string name="DeliveryOrderNumber">Order No</string>
+    <string name="AddDeliveryBtn">Add Delivery</string>
+    <string name="UpdateDelivery">Update Delivery</string>
+    <string name="UpdateDeliveryBtn">Update</string>
+    <string name="DeleteDelivery">Delete Delivery</string>
+    <string name="DeleteDeliveryBtn">Delete</string>
+    <string name="DeliveriesList">Deliveries</string>
+    <string name="AddDeliveryDescription">Add delivery details here</string>
+    <string name="UpdateDeliveryDescription">Update delivery details here</string>
+    <string name="ViewDeliveryDescription">View previously added deliveries</string>
+    <string name="AddRiderBtnV">Add Rider</string>
+    <string name="DeliveryID">DeliveryID</string>
+    <string name="Riders">RIDERS</string>
+    <string name="updateDelivery">UPDATE DELIVERY</string>
+    <string name="titleRider">Riders</string>
+    <string name="RiderFirstName">First Name</string>
+    <string name="RiderLastName">Last Name</string>
     <string name="user_name">User name</string>
     <string name="password">Password</string>
     <string name="login">LOGIN</string>
@@ -28,7 +52,7 @@
     <string name="title_home">Home</string>
     <string name="back">BACK</string>
     <string name="title_dashboard">Dashboard</string>
-    <string name="item1">Cauliflower rice with spicy curry</string>
+    <string name="item1">Cauliflower rice with spicy curry </string>
     <string name="item2">Craving Chicken Fried rice with gravy </string>
     <string name="item3">Seafood Supremo Thin Crust Pizza Large </string>
     <string name="item_name">Item</string>
@@ -41,5 +65,10 @@
     <string name="continue2_btn">Confirm Order</string>
     <string name="cancel_btn">Cancel Order</string>
 
-
+    <string-array name="itemTypeDropdown">
+        <item>Main Dish</item>
+        <item>Dessert</item>
+        <item>Backey</item>
+        <item>Pizza</item>
+    </string-array>
 </resources>

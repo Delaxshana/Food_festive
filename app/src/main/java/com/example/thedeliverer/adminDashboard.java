@@ -17,11 +17,12 @@ public class adminDashboard extends AppCompatActivity {
         add = (Button)findViewById(R.id.add);
         update = (Button)findViewById(R.id.update);
         delete = (Button)findViewById(R.id.delete);
+
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent intent = new Intent(adminDashboard.this,addItem.class);
+                startActivity(intent);
             }
         });
 
@@ -30,6 +31,7 @@ public class adminDashboard extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent(adminDashboard.this,deletItem.class);
+                startActivity(intent);
             }
         });
 
@@ -38,6 +40,7 @@ public class adminDashboard extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent(adminDashboard.this,updateItem.class);
+                startActivity(intent);
             }
         });
     }

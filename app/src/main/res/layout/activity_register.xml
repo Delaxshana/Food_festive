@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.thedeliverer.Register"
+    android:background="@color/back"
     android:gravity="center">
 
     <LinearLayout
@@ -58,6 +59,7 @@
             android:hint="EMAIL"
             />
 
+
         <EditText
             android:id="@+id/password"
             android:layout_width="match_parent"
@@ -68,6 +70,7 @@
             android:inputType="textPassword"
             />
 
+
         <EditText
             android:id="@+id/cPassword"
             android:layout_width="match_parent"
@@ -77,11 +80,17 @@
             android:hint="CONFORM PASSOWRD"
             android:inputType="textPassword"
             />
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Show Password" />
         <Button
             android:id="@+id/register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/themeMain"
+            android:background="@drawable/designbutton"
             android:textColor="@color/black"
             android:text="@string/register"
             android:layout_marginVertical="10dp"/>
@@ -90,11 +99,9 @@
             android:id="@+id/login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/themeMain"
+            android:background="@drawable/designbutton"
             android:textColor="@color/black"
             android:text="@string/login"/>
-
-
 
 
     </LinearLayout>

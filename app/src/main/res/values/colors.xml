@@ -2,8 +2,9 @@
 <resources>
     <color name="colorPrimary">#000000</color>
     <color name="colorPrimaryDark">#3700B3</color>
-    <color name="themeMain">#B67A23</color>
-    <color name="themeSub">#B8B0A5</color>
+    <color name="themeMain">#EC9719</color>
+    <color name="themeSub">#F1B96D</color>
+    <color name="back">#FDFCFA</color>
     <color name="black">#0D0E0E</color>
 
 

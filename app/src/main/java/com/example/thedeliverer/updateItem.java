@@ -1,8 +1,8 @@
 package com.example.thedeliverer;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class updateItem extends AppCompatActivity {
 
@@ -11,4 +11,6 @@ public class updateItem extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_item);
     }
+
+
 }
