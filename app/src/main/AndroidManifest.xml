@@ -9,6 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ViewRiders"></activity>
+        <activity android:name=".ViewDelivery">
+
         <activity android:name=".editUser"></activity>
         <activity android:name=".adminDashboard" />
         <activity android:name=".deletItem" />
@@ -25,10 +28,16 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".AddDelivery" />
+        <activity android:name=".UpdateDelivery" />
+        <activity android:name=".AddRider" />
+        <activity android:name=".Register" />
+        <activity android:name=".Dashboard" />
+        <activity android:name=".Login" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
