@@ -256,6 +256,7 @@
             <TextView
                 android:id="@+id/food_item4"
                 android:background="@drawable/border"
+                android:onClick="setRowDetails4"
                 android:padding="3dp"
                 android:text="Item4"
                 android:textColor="#2E2727"
@@ -402,6 +403,7 @@
         android:layout_width="192dp"
         android:layout_height="42dp"
         android:background="#4CAF50"
+        android:onClick="sendDataForConfirmation"
         android:text="@string/continue1_btn"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
