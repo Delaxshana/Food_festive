@@ -61,8 +61,8 @@ public class userProfile extends AppCompatActivity {
                     Intent intent_home = new Intent(userProfile.this,dashboard.class);
                     startActivity(intent_home);
                     break;
-                case R.id.navigation_search:
-                    Intent intent = new Intent(userProfile.this,Register.class);
+                case R.id.navigation_order:
+                    Intent intent = new Intent(userProfile.this,OrderDetails.class);
                     startActivity(intent);
                     //selectedFragment = new BookingFragment();
                     break;

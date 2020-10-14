@@ -13,7 +13,7 @@
         <activity android:name=".OrderDetails" /> 
         <activity android:name=".FoodCart" />
         <activity android:name=".ViewRiders"></activity>
-        <activity android:name=".ViewDelivery">
+        <activity android:name=".ViewDelivery"/>
         <activity android:name=".editUser"></activity>
 
         <activity android:name=".adminDashboard" />
@@ -26,18 +26,19 @@
         <activity android:name=".pizza" />
         <activity android:name=".dessert" />
         <activity android:name=".dashboard" />
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+
         <activity android:name=".AddDelivery" />
         <activity android:name=".UpdateDelivery" />
         <activity android:name=".AddRider" />
         <activity android:name=".Register" />
-        <activity android:name=".Dashboard" />
         <activity android:name=".Login" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

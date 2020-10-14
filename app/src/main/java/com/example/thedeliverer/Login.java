@@ -28,9 +28,9 @@ public class Login extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // validate(email.getText().toString(), password.getText().toString());
+                validate(email.getText().toString(), password.getText().toString());
               // boolean success=
-                myDb.checkUser(email.getText().toString(), password.getText().toString());
+              //  myDb.checkUser(email.getText().toString(), password.getText().toString());
 
               /***
                *  if(success=true){

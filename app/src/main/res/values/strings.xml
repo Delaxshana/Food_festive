@@ -49,6 +49,9 @@
     <string name="add">ADD ITEM</string>
     <string name="update">DELETE ITEM</string>
     <string name="delete">UPDATE ITEM</string>
+    <string name="addRider">ADD RIDER</string>
+    <string name="viewRider">VIEW RIDER</string>
+    <string name="deleteRider">DELETE RIDER</string>
     <string name="title_home">Home</string>
     <string name="back">BACK</string>
     <string name="title_dashboard">Dashboard</string>

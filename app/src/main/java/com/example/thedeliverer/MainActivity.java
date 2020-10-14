@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-                Intent mySuperIntent = new Intent(MainActivity.this, Login.class);
+                Intent mySuperIntent = new Intent(MainActivity.this, OrderConfirmation.class);
                 startActivity(mySuperIntent);
                 finish();
 
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void navigationOne(View view){
         Intent intent;
-        intent = new Intent(this, Login.class);
+        intent = new Intent(this, OrderDetails.class);
         startActivity(intent);
     }
     private void playProgress() {
