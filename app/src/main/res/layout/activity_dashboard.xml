@@ -16,6 +16,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/back"
         app:layout_constraintTop_toTopOf="parent">
 
 
@@ -50,16 +51,19 @@
 
                                 <ImageView
                                     android:id="@+id/imageView12"
-                                    android:layout_width="398dp"
-                                    android:layout_height="191dp"
+                                    style="@style/dashboardImage"
+                                    android:gravity="center"
+                                    android:layout_margin="4dp"
                                     app:srcCompat="@drawable/califlowerrice" />
 
                                 <TextView
                                     android:id="@+id/textViewItem1"
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
+                                    android:background="@drawable/textborder"
                                     android:text="@string/item1"
                                     android:textColor="#151313"
+                                    android:gravity="center"
                                     android:textSize="18sp" />
 
                                 <LinearLayout
@@ -72,16 +76,18 @@
                                         android:id="@+id/food_item1_btn"
                                         android:layout_width="100dp"
                                         android:layout_height="wrap_content"
-                                        android:background="@color/themeSub"
+                                        android:background="@drawable/designbutton"
                                         android:layout_marginRight="5dp"
                                         android:text="ORDER"
+                                        android:layout_margin="8dp"
                                         android:layout_weight="33"/>
 
                                     <Button
                                         android:layout_width="100dp"
                                         android:layout_height="wrap_content"
-                                        android:background="@color/themeSub"
+                                        android:background="@drawable/designbutton"
                                         android:text="VIEW"
+                                        android:layout_margin="8dp"
                                         android:layout_weight="33"/>
 
                                 </LinearLayout>
@@ -90,12 +96,15 @@
                                     android:id="@+id/imageView10"
                                     android:layout_width="match_parent"
                                     android:layout_height="236dp"
+                                    android:layout_margin="4dp"
                                     app:srcCompat="@drawable/friedrice" />
 
                                 <TextView
                                     android:id="@+id/textViewItem2"
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
+                                    android:background="@drawable/textborder"
+                                    android:gravity="center"
                                     android:text="@string/item2"
                                     android:textColor="#151313"
                                     android:textSize="18sp" />
@@ -110,16 +119,18 @@
                                         android:id="@+id/food_item2_btn"
                                         android:layout_width="100dp"
                                         android:layout_height="wrap_content"
-                                        android:background="@color/themeSub"
+                                        android:background="@drawable/designbutton"
                                         android:layout_marginRight="5dp"
+                                        android:layout_margin="8dp"
                                         android:text="ORDER"
                                         android:layout_weight="33"/>
 
                                     <Button
                                         android:layout_width="100dp"
                                         android:layout_height="wrap_content"
-                                        android:background="@color/themeSub"
+                                        android:background="@drawable/designbutton"
                                         android:text="VIEW"
+                                        android:layout_margin="8dp"
                                         android:layout_weight="33"/>
 
                                 </LinearLayout>
@@ -128,6 +139,7 @@
                                     android:id="@+id/imageButton"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:layout_margin="8dp"
                                     app:srcCompat="@drawable/pizza3" />
 
                                 <TextView
@@ -136,6 +148,7 @@
                                     android:layout_height="30dp"
                                     android:text="@string/item3"
                                     android:textColor="#151313"
+                                    android:gravity="center"
                                     android:textSize="18sp" />
 
                                 <LinearLayout
@@ -148,16 +161,18 @@
                                         android:id="@+id/food_item3_btn"
                                         android:layout_width="100dp"
                                         android:layout_height="wrap_content"
-                                        android:background="@color/themeSub"
+                                        android:background="@drawable/designbutton"
                                         android:layout_marginRight="5dp"
                                         android:text="ORDER"
+                                        android:layout_margin="8dp"
                                         android:layout_weight="33"/>
 
                                     <Button
                                         android:layout_width="100dp"
                                         android:layout_height="wrap_content"
-                                        android:background="@color/themeSub"
+                                        android:background="@drawable/designbutton"
                                         android:text="VIEW"
+                                        android:layout_margin="8dp"
                                         android:layout_weight="33"/>
 
                                 </LinearLayout>
@@ -166,6 +181,7 @@
                                     android:id="@+id/imageButton1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:layout_margin="4dp"
                                     app:srcCompat="@drawable/pizza3" />
 
                                 <TextView
@@ -186,16 +202,18 @@
                                         android:id="@+id/food_item4_btn"
                                         android:layout_width="100dp"
                                         android:layout_height="wrap_content"
-                                        android:background="@color/themeSub"
+                                        android:background="@drawable/designbutton"
                                         android:layout_marginRight="5dp"
                                         android:text="ORDER"
+                                        android:layout_margin="8dp"
                                         android:layout_weight="33"/>
 
                                     <Button
                                         android:layout_width="100dp"
                                         android:layout_height="wrap_content"
-                                        android:background="@color/themeSub"
+                                        android:background="@drawable/designbutton"
                                         android:text="VIEW"
+                                        android:layout_margin="8dp"
                                         android:layout_weight="33"/>
 
                                 </LinearLayout>
@@ -214,12 +232,14 @@
 
     </LinearLayout>
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:background="@color/themeMain"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
         app:menu="@menu/bottom_nav_menu" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
