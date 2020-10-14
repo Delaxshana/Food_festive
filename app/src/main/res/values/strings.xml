@@ -47,8 +47,8 @@
     <string name="addAddress">ADD</string>
     <string name="addLater"> ADD LATER</string>
     <string name="add">ADD ITEM</string>
-    <string name="update">DELETE ITEM</string>
-    <string name="delete">UPDATE ITEM</string>
+    <string name="update">UPDATE ITEM</string>
+    <string name="delete">DELETE ITEM</string>
     <string name="addRider">ADD RIDER</string>
     <string name="viewRider">VIEW RIDER</string>
     <string name="deleteRider">DELETE RIDER</string>
@@ -67,7 +67,11 @@
     <string name="delete_btn">Delete</string>
     <string name="continue2_btn">Confirm Order</string>
     <string name="cancel_btn">Cancel Order</string>
-
+    <string name="UpdateItem">Update Item</string>
+    <string name="UpdateItemDescription">Update Item here</string>
+    <string name="delivery">Delivery List</string>
+    <string name="itemName">Name</string>
+    <string name="itemPrice"> Price</string>
     <string-array name="itemTypeDropdown">
         <item>Main Dish</item>
         <item>Dessert</item>

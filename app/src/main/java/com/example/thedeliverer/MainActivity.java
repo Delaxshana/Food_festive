@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-                Intent mySuperIntent = new Intent(MainActivity.this, OrderConfirmation.class);
+                Intent mySuperIntent = new Intent(MainActivity.this, Login.class);
                 startActivity(mySuperIntent);
                 finish();
 

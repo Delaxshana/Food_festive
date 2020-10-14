@@ -5,15 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.thedeliverer.Register"
-    android:gravity="center"
     android:background="@color/back"
-    >
+    android:gravity="center">
 
     <LinearLayout
-        android:layout_width="100dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center"
         android:padding="10dp">
 
 
@@ -45,41 +43,16 @@
             android:text="@string/delete"
             android:layout_marginVertical="10dp"/>
 
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="10dp">
-
         <Button
-            android:id="@+id/addRider"
+            android:id="@+id/delivery"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/designbutton"
             android:textColor="@color/black"
-            android:text="@string/addRider"
+            android:text="@string/delivery"
             android:layout_marginVertical="10dp"/>
 
-        <Button
-            android:id="@+id/viewRider"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/designbutton"
-            android:textColor="@color/black"
-            android:text="@string/viewRider"/>
 
-
-        <Button
-            android:id="@+id/deleteRider"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/designbutton"
-            android:textColor="@color/black"
-            android:text="@string/deleteRider"
-            android:layout_marginVertical="10dp"/>
 
 
     </LinearLayout>

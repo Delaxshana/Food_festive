@@ -39,17 +39,16 @@ public class dashboard extends AppCompatActivity {
                 case R.id.navigation_home:
                     break;
                 case R.id.navigation_order:
-                    Intent intent = new Intent(dashboard.this,OrderDetails.class);
+                    Intent intent = new Intent(dashboard.this,OrderConfirmation.class);
                     startActivity(intent);
-                    //selectedFragment = new BookingFragment();
                     break;
                 case R.id.navigation_cart:
-
+                  //  Intent intent_del= new Intent(dashboard.this,ViewDelivery.class);
+                 //   startActivity(intent_del);
                     break;
                 case R.id.navigation_user:
                     Intent intent_user = new Intent(dashboard.this,userProfile.class);
                     startActivity(intent_user);
-
                     break;
 
 

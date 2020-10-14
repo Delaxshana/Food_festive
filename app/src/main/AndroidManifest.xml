@@ -24,7 +24,6 @@
         <activity android:name=".adminLogin" />
         <activity android:name=".userProfile" />
         <activity android:name=".pizza" />
-        <activity android:name=".dessert" />
         <activity android:name=".dashboard" />
 
         <activity android:name=".AddDelivery" />

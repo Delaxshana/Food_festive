@@ -56,6 +56,11 @@ public class Register extends AppCompatActivity {
                     password.setError("Password Must be more than 8 characters");
                     return;
                 }
+                if (phone.length()<10 || phone.length()>10) {
+                    phone.setError("Enter a right mobile number");
+                }
+
+
                 /** if(pw!=cpw){
                  password.setError("Password not matching");
                  return;

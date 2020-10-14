@@ -11,8 +11,13 @@ public class Item implements Parcelable {
     String type;
     String description;
     Bitmap image;
+    String price;
 
-    public Item(int id,String name, String type, String desc,Bitmap image){
+    public Item() {
+
+    }
+
+    public Item(int id, String name, String type, String desc, Bitmap image){
         this.id=id;
         this.name=name;
         this.type=type;
