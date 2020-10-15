@@ -194,8 +194,9 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put(UsersMaster.Order.COLUMN_NAME_TIME,time);
 
         long newRowId = db.insert(UsersMaster.Order.ORDER_TABLE_NAME,null,values);
-        String orderID = readAllOrderInfo("order_ID");
+        String orderID = null;
         if (newRowId>0){
+            orderID = readAllOrderInfo("order_ID");
             return orderID;
         }
         else{
@@ -220,8 +221,9 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put(UsersMaster.Cart_row.COLUMN_NAME_SIZE,size);
 
         long newRowId = db.insert(UsersMaster.Cart_row.CART_ROW_TABLE_NAME,null,values);
-        String cartRowID = readAllCartRowInfo("spc_carts_ID");
+        String cartRowID = null;
         if (newRowId>0){
+            cartRowID = readAllCartRowInfo("spc_carts_ID");
             return cartRowID;
         }
         else{
