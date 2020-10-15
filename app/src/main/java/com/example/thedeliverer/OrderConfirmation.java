@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
-import com.example.thedeliverer.Database.DBHelper;
+import com.example.thedeliverer.Database.DBHelperOrder;
 import com.example.thedeliverer.Database.UsersMaster;
 
 public class OrderConfirmation extends AppCompatActivity {
@@ -35,9 +35,9 @@ public class OrderConfirmation extends AppCompatActivity {
         cartID = getIntent().getStringExtra("cartId");
         int cart_ID = Integer.parseInt(cartID);
 
-        DBHelper dbHelper = new DBHelper(this);
+        DBHelperOrder dbHelperOrder = new DBHelperOrder(this);
 
-        Cursor rs = dbHelper.getCartData(cart_ID);
+        Cursor rs = dbHelperOrder.getCartData(cart_ID);
         rs.moveToFirst();
 
         String q1 = rs.getString(rs.getColumnIndex(UsersMaster.Cart.COLUMN_NAME_QUANTITY1));
@@ -62,9 +62,9 @@ public class OrderConfirmation extends AppCompatActivity {
 
         boolean checked = pickup_btn.isChecked();
 
-        DBHelper dbHelper = new DBHelper(this);
+        DBHelperOrder dbHelperOrder = new DBHelperOrder(this);
 
-        String orderID = dbHelper.addOrderTableInfo(cartID,special_instructions_msg,date_input.getText().toString(),time_input.getText().toString());
+        String orderID = dbHelperOrder.addOrderTableInfo(cartID,special_instructions_msg,date_input.getText().toString(),time_input.getText().toString());
 
 
         if (checked == true){

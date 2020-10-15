@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.thedeliverer.Database.DBHelper;
+import com.example.thedeliverer.Database.DBHelperOrder;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -106,7 +106,7 @@ public class FoodCart extends AppCompatActivity {
     }
 
     public void addToCart(View view){
-        DBHelper dbHelper = new DBHelper(this);
+        DBHelperOrder dbHelperOrder = new DBHelperOrder(this);
 //        String val3=null;
         item_name1 = item_name2=item_name3=item_name4="item";
         item_quantity1=item_quantity2=item_quantity3=item_quantity4="1";
@@ -118,22 +118,22 @@ public class FoodCart extends AppCompatActivity {
             item_name1 = item1.getText().toString();
             item_quantity1 = quantity1.getText().toString();
             item_size1 = size1.getText().toString();
-            ID1 = dbHelper.addCartRowTableInfo(item_name1,item_quantity1,item_size1);
+            ID1 = dbHelperOrder.addCartRowTableInfo(item_name1,item_quantity1,item_size1);
             if(size>1){
                 item_name2 = item2.getText().toString();
                 item_quantity2 = quantity2.getText().toString();
                 item_size2 = size2.getText().toString();
-                ID2 = dbHelper.addCartRowTableInfo(item_name2,item_quantity2,item_size2);
+                ID2 = dbHelperOrder.addCartRowTableInfo(item_name2,item_quantity2,item_size2);
                 if (size>2){
                     item_name3 = item3.getText().toString();
                     item_quantity3 = quantity3.getText().toString();
                     item_size3 = size3.getText().toString();
-                    ID3 = dbHelper.addCartRowTableInfo(item_name3,item_quantity3,item_size3);
+                    ID3 = dbHelperOrder.addCartRowTableInfo(item_name3,item_quantity3,item_size3);
                     if (size>3){
                         item_name4 = item4.getText().toString();
                         item_quantity4 = quantity4.getText().toString();
                         item_size4 = size4.getText().toString();
-                        ID4 = dbHelper.addCartRowTableInfo(item_name4,item_quantity4,item_size4);
+                        ID4 = dbHelperOrder.addCartRowTableInfo(item_name4,item_quantity4,item_size4);
                     }
                 }
             }

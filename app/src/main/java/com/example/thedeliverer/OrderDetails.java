@@ -8,15 +8,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.thedeliverer.Database.DBHelper;
+import com.example.thedeliverer.Database.DBHelperOrder;
 import com.example.thedeliverer.Database.UsersMaster;
 
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class OrderDetails extends AppCompatActivity {
@@ -127,7 +124,7 @@ public class OrderDetails extends AppCompatActivity {
 
 
 
-        DBHelper dbHelper = new DBHelper(this);
+        DBHelperOrder dbHelperOrder = new DBHelperOrder(this);
 
 //        cartId = dbHelper.readAllcartsInfo("cart_ID");
 //        item1 = dbHelper.readAllcartsInfo("item1");
@@ -149,7 +146,7 @@ public class OrderDetails extends AppCompatActivity {
             id1 = Integer.parseInt(ID1);
             item_ID = id1;
 
-            Cursor r1 = dbHelper.getCartRowData(id1);
+            Cursor r1 = dbHelperOrder.getCartRowData(id1);
 
             if (r1!=null){
                 r1.moveToFirst();
@@ -176,7 +173,7 @@ public class OrderDetails extends AppCompatActivity {
             if (cart_size>1){
                 id2 = Integer.parseInt(ID2);
 
-                Cursor r2 = dbHelper.getCartRowData(id2);
+                Cursor r2 = dbHelperOrder.getCartRowData(id2);
                 r2.moveToFirst();
                 item2 = r2.getString(r2.getColumnIndex(UsersMaster.Cart_row.COLUMN_NAME_ITEM));
                 quantity2 = r2.getString(r2.getColumnIndex(UsersMaster.Cart_row.COLUMN_NAME_QUANTITY));
@@ -199,7 +196,7 @@ public class OrderDetails extends AppCompatActivity {
                 if (cart_size>2){
                     id3 = Integer.parseInt(ID3);
 
-                    Cursor r3 = dbHelper.getCartRowData(id3);
+                    Cursor r3 = dbHelperOrder.getCartRowData(id3);
                     r3.moveToFirst();
                     item3 = r3.getString(r3.getColumnIndex(UsersMaster.Cart_row.COLUMN_NAME_ITEM));
                     quantity3 = r3.getString(r3.getColumnIndex(UsersMaster.Cart_row.COLUMN_NAME_QUANTITY));
@@ -222,7 +219,7 @@ public class OrderDetails extends AppCompatActivity {
                     if (cart_size>3){
                         id4 = Integer.parseInt(ID4);
 
-                        Cursor r4 = dbHelper.getCartRowData(id4);
+                        Cursor r4 = dbHelperOrder.getCartRowData(id4);
                         r4.moveToFirst();
                         item4 = r4.getString(r4.getColumnIndex(UsersMaster.Cart_row.COLUMN_NAME_ITEM));
                         quantity4 = r4.getString(r4.getColumnIndex(UsersMaster.Cart_row.COLUMN_NAME_QUANTITY));
@@ -473,7 +470,7 @@ public class OrderDetails extends AppCompatActivity {
     }
 
     public void sendDataForConfirmation(View view){
-        DBHelper dbHelper = new DBHelper(this);
+        DBHelperOrder dbHelperOrder = new DBHelperOrder(this);
 
         item_name1 = item_name2=item_name3=item_name4="item";
         item_quantity1=item_quantity2=item_quantity3=item_quantity4="1";
@@ -505,7 +502,7 @@ public class OrderDetails extends AppCompatActivity {
             }
         }
 
-        carts_id = dbHelper.addCartTableInfo(item_name1,item_name2,item_name3,item_name4,item_quantity1,item_quantity2,item_quantity3,item_quantity4,item_size1,item_size2,item_size3,item_size4);
+        carts_id = dbHelperOrder.addCartTableInfo(item_name1,item_name2,item_name3,item_name4,item_quantity1,item_quantity2,item_quantity3,item_quantity4,item_size1,item_size2,item_size3,item_size4);
 
         Intent i1 = new Intent(OrderDetails.this,OrderConfirmation.class);
         i1.putExtra("special_inst",special_instructions_txt.getText().toString());
@@ -521,13 +518,13 @@ public class OrderDetails extends AppCompatActivity {
     }
 
     public void deleteData(View view){
-        DBHelper dbHelper = new DBHelper(this);
+        DBHelperOrder dbHelperOrder = new DBHelperOrder(this);
 
         item_name1 = item_name2=item_name3=item_name4="item";
         item_quantity1=item_quantity2=item_quantity3=item_quantity4="1";
         item_size1=item_size2=item_size3=item_size4="small";
 
-        dbHelper.deleteCartInfo(item_ID);
+        dbHelperOrder.deleteCartInfo(item_ID);
 
             if (item_ID == id1){
                 if(cart_size<=3 && cart_size>0){
@@ -535,21 +532,21 @@ public class OrderDetails extends AppCompatActivity {
                         item_name2 = food_item2.getText().toString();
                         item_quantity2 = food_quantity2.getText().toString();
                         item_size2 = food_size2.getText().toString();
-                        ID1 = dbHelper.addCartRowTableInfo(item_name2,item_quantity2,item_size2);
+                        ID1 = dbHelperOrder.addCartRowTableInfo(item_name2,item_quantity2,item_size2);
 
                         if (cart_size>2){
                             item_name3 = food_item3.getText().toString();
                             item_quantity3 = food_quantity3.getText().toString();
                             item_size3 = food_size3.getText().toString();
 
-                            ID2 = dbHelper.addCartRowTableInfo(item_name3,item_quantity3,item_size3);
+                            ID2 = dbHelperOrder.addCartRowTableInfo(item_name3,item_quantity3,item_size3);
 
                             if (cart_size>3){
                                 item_name4 = food_item4.getText().toString();
                                 item_quantity4 = food_quantity4.getText().toString();
                                 item_size4 = food_size4.getText().toString();
 
-                                ID3 = dbHelper.addCartRowTableInfo(item_name4,item_quantity4,item_size4);
+                                ID3 = dbHelperOrder.addCartRowTableInfo(item_name4,item_quantity4,item_size4);
 
                             }
                         }
@@ -564,7 +561,7 @@ public class OrderDetails extends AppCompatActivity {
                     item_name1 = food_item1.getText().toString();
                     item_quantity1 = food_quantity1.getText().toString();
                     item_size1 = food_size1.getText().toString();
-                    ID1 = dbHelper.addCartRowTableInfo(item_name1,item_quantity1,item_size1);
+                    ID1 = dbHelperOrder.addCartRowTableInfo(item_name1,item_quantity1,item_size1);
                     if(cart_size>1){
 
                         if (cart_size>2){
@@ -572,14 +569,14 @@ public class OrderDetails extends AppCompatActivity {
                             item_quantity3 = food_quantity3.getText().toString();
                             item_size3 = food_size3.getText().toString();
 
-                            ID2 = dbHelper.addCartRowTableInfo(item_name3,item_quantity3,item_size3);
+                            ID2 = dbHelperOrder.addCartRowTableInfo(item_name3,item_quantity3,item_size3);
 
                             if (cart_size>3){
                                 item_name4 = food_item4.getText().toString();
                                 item_quantity4 = food_quantity4.getText().toString();
                                 item_size4 = food_size4.getText().toString();
 
-                                ID3 = dbHelper.addCartRowTableInfo(item_name4,item_quantity4,item_size4);
+                                ID3 = dbHelperOrder.addCartRowTableInfo(item_name4,item_quantity4,item_size4);
 
                             }
                         }
@@ -594,13 +591,13 @@ public class OrderDetails extends AppCompatActivity {
                     item_name1 = food_item1.getText().toString();
                     item_quantity1 = food_quantity1.getText().toString();
                     item_size1 = food_size1.getText().toString();
-                    ID1 = dbHelper.addCartRowTableInfo(item_name1,item_quantity1,item_size1);
+                    ID1 = dbHelperOrder.addCartRowTableInfo(item_name1,item_quantity1,item_size1);
                     if(cart_size>1){
                         item_name2 = food_item2.getText().toString();
                         item_quantity2 = food_quantity2.getText().toString();
                         item_size2 = food_size2.getText().toString();
 
-                        ID2 = dbHelper.addCartRowTableInfo(item_name2,item_quantity2,item_size2);
+                        ID2 = dbHelperOrder.addCartRowTableInfo(item_name2,item_quantity2,item_size2);
                         if (cart_size>2){
 
                             if (cart_size>3){
@@ -608,7 +605,7 @@ public class OrderDetails extends AppCompatActivity {
                                 item_quantity4 = food_quantity4.getText().toString();
                                 item_size4 = food_size4.getText().toString();
 
-                                ID3 = dbHelper.addCartRowTableInfo(item_name4,item_quantity4,item_size4);
+                                ID3 = dbHelperOrder.addCartRowTableInfo(item_name4,item_quantity4,item_size4);
 
                             }
                         }
@@ -622,19 +619,19 @@ public class OrderDetails extends AppCompatActivity {
                     item_name1 = food_item1.getText().toString();
                     item_quantity1 = food_quantity1.getText().toString();
                     item_size1 = food_size1.getText().toString();
-                    ID1 = dbHelper.addCartRowTableInfo(item_name1,item_quantity1,item_size1);
+                    ID1 = dbHelperOrder.addCartRowTableInfo(item_name1,item_quantity1,item_size1);
                     if(cart_size>1){
                         item_name2 = food_item2.getText().toString();
                         item_quantity2 = food_quantity2.getText().toString();
                         item_size2 = food_size2.getText().toString();
 
-                        ID2 = dbHelper.addCartRowTableInfo(item_name2,item_quantity2,item_size2);
+                        ID2 = dbHelperOrder.addCartRowTableInfo(item_name2,item_quantity2,item_size2);
                         if (cart_size>2){
                             item_name3 = food_item3.getText().toString();
                             item_quantity3 = food_quantity3.getText().toString();
                             item_size3 = food_size3.getText().toString();
 
-                            ID3 = dbHelper.addCartRowTableInfo(item_name3,item_quantity3,item_size3);
+                            ID3 = dbHelperOrder.addCartRowTableInfo(item_name3,item_quantity3,item_size3);
 
                             if (cart_size>3){
 
@@ -663,18 +660,18 @@ public class OrderDetails extends AppCompatActivity {
     }
 
     public void updateData(View view){
-        DBHelper dbHelper = new DBHelper(this);
+        DBHelperOrder dbHelperOrder = new DBHelperOrder(this);
 
         item_name1 = item_name2=item_name3=item_name4="item";
         item_quantity1=item_quantity2=item_quantity3=item_quantity4="1";
         item_size1=item_size2=item_size3=item_size4="small";
 
-        dbHelper.updateCartInfo(item_ID,item_name.getText().toString(),item_quantity.getText().toString(),item_size.getText().toString());
+        dbHelperOrder.updateCartInfo(item_ID,item_name.getText().toString(),item_quantity.getText().toString(),item_size.getText().toString());
 
         Toast.makeText(this, "Data updates successfully", Toast.LENGTH_SHORT).show();
         if (cart_size>0){
 
-            Cursor r1 = dbHelper.getCartRowData(id1);
+            Cursor r1 = dbHelperOrder.getCartRowData(id1);
 
             if (r1!=null){
                 r1.moveToFirst();
@@ -688,7 +685,7 @@ public class OrderDetails extends AppCompatActivity {
                 r1.close();
             }
 
-            ID1 = dbHelper.addCartRowTableInfo(item1,quantity1,size1);
+            ID1 = dbHelperOrder.addCartRowTableInfo(item1,quantity1,size1);
 
 //            item1 = dbHelper.readAllCartRowInfo("item_name");
 //            quantity1 = dbHelper.readAllCartRowInfo("item_quantity");
@@ -696,7 +693,7 @@ public class OrderDetails extends AppCompatActivity {
 
             if (cart_size>1){
 
-                Cursor r2 = dbHelper.getCartRowData(id2);
+                Cursor r2 = dbHelperOrder.getCartRowData(id2);
                 r2.moveToFirst();
                 item2 = r2.getString(r2.getColumnIndex(UsersMaster.Cart_row.COLUMN_NAME_ITEM));
                 quantity2 = r2.getString(r2.getColumnIndex(UsersMaster.Cart_row.COLUMN_NAME_QUANTITY));
@@ -705,7 +702,7 @@ public class OrderDetails extends AppCompatActivity {
                 if (!r2.isClosed())  {
                     r2.close();
                 }
-                ID2 = dbHelper.addCartRowTableInfo(item2,quantity2,size2);
+                ID2 = dbHelperOrder.addCartRowTableInfo(item2,quantity2,size2);
 
 //                item2 = dbHelper.readAllCartRowInfo("item_name");
 //                quantity2 = dbHelper.readAllCartRowInfo("item_quantity");
@@ -714,7 +711,7 @@ public class OrderDetails extends AppCompatActivity {
                 if (cart_size>2){
 //                    id3 = Integer.parseInt(ID3);
 
-                    Cursor r3 = dbHelper.getCartRowData(id3);
+                    Cursor r3 = dbHelperOrder.getCartRowData(id3);
                     r3.moveToFirst();
                     item3 = r3.getString(r3.getColumnIndex(UsersMaster.Cart_row.COLUMN_NAME_ITEM));
                     quantity3 = r3.getString(r3.getColumnIndex(UsersMaster.Cart_row.COLUMN_NAME_QUANTITY));
@@ -723,7 +720,7 @@ public class OrderDetails extends AppCompatActivity {
                     if (!r3.isClosed())  {
                         r3.close();
                     }
-                    ID3 = dbHelper.addCartRowTableInfo(item3,quantity3,size3);
+                    ID3 = dbHelperOrder.addCartRowTableInfo(item3,quantity3,size3);
 
 //                    item3 = dbHelper.readAllCartRowInfo("item_name");
 //                    quantity3 = dbHelper.readAllCartRowInfo("item_quantity");
@@ -732,7 +729,7 @@ public class OrderDetails extends AppCompatActivity {
                     if (cart_size>3){
                         id4 = Integer.parseInt(ID4);
 
-                        Cursor r4 = dbHelper.getCartRowData(id4);
+                        Cursor r4 = dbHelperOrder.getCartRowData(id4);
                         r4.moveToFirst();
                         item4 = r4.getString(r4.getColumnIndex(UsersMaster.Cart_row.COLUMN_NAME_ITEM));
                         quantity4 = r4.getString(r4.getColumnIndex(UsersMaster.Cart_row.COLUMN_NAME_QUANTITY));
@@ -741,7 +738,7 @@ public class OrderDetails extends AppCompatActivity {
                         if (!r4.isClosed())  {
                             r4.close();
                         }
-                        ID4 = dbHelper.addCartRowTableInfo(item4,quantity4,size4);
+                        ID4 = dbHelperOrder.addCartRowTableInfo(item4,quantity4,size4);
 //
 //                        item4 = dbHelper.readAllCartRowInfo("item_name");
 //                        quantity4 = dbHelper.readAllCartRowInfo("item_quantity");

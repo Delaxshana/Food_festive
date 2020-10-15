@@ -2,7 +2,7 @@ package com.example.thedeliverer;
 
 import android.content.Context;
 
-import com.example.thedeliverer.Database.DBHelper;
+import com.example.thedeliverer.Database.DBHelperOrder;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -10,17 +10,17 @@ import static org.junit.Assert.*;
 
 
 public class IT19085968 {
-    private DBHelper dbHelper;
+    private DBHelperOrder dbHelperOrder;
     private Context context;
 
     @Before
     public void setUp(){
-        dbHelper = new DBHelper(context);
+        dbHelperOrder = new DBHelperOrder(context);
     }
 
     @Test
     public void testinsertingOrdertable(){
-        String result = dbHelper.addOrderTableInfo(null,null,null,null);
+        String result = dbHelperOrder.addOrderTableInfo(null,null,null,null);
         assertEquals(null,result);
     }
 
