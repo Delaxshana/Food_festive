@@ -276,6 +276,7 @@
         android:layout_width="165dp"
         android:layout_height="48dp"
         android:background="#4CAF50"
+        android:onClick="continueShopping"
         android:text="@string/continue_shopping_btn"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -2,6 +2,8 @@ package com.example.thedeliverer;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -83,20 +85,22 @@ public class dashboard extends AppCompatActivity {
                 startActivity(intent3);
                 return true;
             case R.id.navigation_user:
-                Intent intent4 = new Intent(dashboard.this,user.class);
+                Intent intent4 = new Intent(dashboard.this,dashboard.class);
                 startActivity(intent4);
                 return true;
         }
 
+        BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
+        bottomNav.setOnNavigationItemSelectedListener(navListener);
+
         return super.onOptionsItemSelected(item);
-    }
+
 
 
        // NavigationView navigationView=findViewById(R.id.bottom_nav);
         //navigationView.setNavigationItemSelectedListener(this);
 
-        BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
-        bottomNav.setOnNavigationItemSelectedListener(navListener);
+
     }
 
     private final BottomNavigationView.OnNavigationItemSelectedListener navListener= new BottomNavigationView.OnNavigationItemSelectedListener(){
