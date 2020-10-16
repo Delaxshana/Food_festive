@@ -1,15 +1,19 @@
 package com.example.thedeliverer;
 
 public class User {
-    private   String id;
-    private   String fname;
-    private   String lname;
-    private   String email;
-    private   String contactNo;
-    private   String password;
 
+    protected   int id;
+    protected String fname;
+    protected   String lname;
+    protected   String email;
+    protected   String contactNo;
+    protected   String password;
+    protected   String phone;
 
-    public User(String id, String fname, String lname, String email, String contactNo,String password) {
+    public User() {
+    }
+
+    public User(int id, String fname, String lname, String email, String contactNo, String password) {
         this.id = id;
         this.fname = fname;
         this.lname = lname;
@@ -26,11 +30,11 @@ public class User {
         this.password = password;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

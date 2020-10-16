@@ -10,19 +10,20 @@ public class Item implements Parcelable {
     String name;
     String type;
     String description;
-    Bitmap image;
+   // Bitmap image;
     String price;
 
     public Item() {
 
     }
 
-    public Item(int id, String name, String type, String desc, Bitmap image){
+    public Item(int id, String name, String type, String desc,String price){
         this.id=id;
         this.name=name;
         this.type=type;
         this.description=desc;
-        this.image=image;
+       // this.image=image;
+        this.price=price;
 
     }
 
@@ -31,7 +32,7 @@ public class Item implements Parcelable {
         name=in.readString();
         type=in.readString();
         description=in.readString();
-        image=in.readParcelable(Bitmap.class.getClassLoader());
+       // image=in.readParcelable(Bitmap.class.getClassLoader());
     }
 
     public static final Creator<Item> CREATOR = new Creator<Item>() {
@@ -66,13 +67,13 @@ public class Item implements Parcelable {
         return type;
     }
 
-    public void setType(){
+    public void setType(String string){
         this.type=type;
     }
 
-    public Bitmap getImage(){
-        return image;
-    }
+   // public Bitmap getImage(){
+   //     return image;
+    //}
 
     @Override
     public int describeContents() {
@@ -85,7 +86,7 @@ public class Item implements Parcelable {
         dest.writeString(name);
         dest.writeString(type);
         dest.writeString(description);
-        dest.writeParcelable(image, flags);
+       // dest.writeParcelable(image, flags);
     }
 
 }

@@ -79,6 +79,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    @Override
+    public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        db.setVersion(oldVersion);
+    }
+
     public boolean insertItem(String name,String type,String price,String desc){
         SQLiteDatabase db = this.getWritableDatabase();
 

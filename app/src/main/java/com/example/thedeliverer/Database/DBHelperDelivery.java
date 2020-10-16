@@ -11,7 +11,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBHelperDelivery extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "foodFestive.db";
+    public static final String DATABASE_NAME = "foodFestiveDel.db";
     public static final String TABLE_NAME1= "rider";
     public static final String TABLE1_COLUMN_1= "ID";
     public static final String TABLE1_COLUMN_2= "FirstName";
@@ -29,7 +29,7 @@ public class DBHelperDelivery extends SQLiteOpenHelper {
 
     //constructor of helper class
     public DBHelperDelivery(Context context){
-        super(context,DATABASE_NAME,null,1);
+        super(context,DATABASE_NAME,null,5);
 
     }
 

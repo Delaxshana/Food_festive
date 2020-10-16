@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,11 +14,12 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+
 public class userProfile extends AppCompatActivity {
 
     Button edit;
     TextView fname,lname,ph;
-
+    LinearLayout linearLayoutRecords;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +30,11 @@ public class userProfile extends AppCompatActivity {
         lname=(TextView) findViewById(R.id.lName);
         ph=(TextView) findViewById(R.id.phoneNo);
 
-        fname.setText(getIntent().getStringExtra("firstName"));
-        lname.setText(getIntent().getStringExtra("lastName"));
-        ph.setText(getIntent().getStringExtra("phoneNo"));
+        linearLayoutRecords = this.findViewById(R.id.layout);
+        readRecords();
+//        fname.setText(getIntent().getStringExtra("firstName"));
+//        lname.setText(getIntent().getStringExtra("lastName"));
+//        ph.setText(getIntent().getStringExtra("phoneNo"));
 
         edit=(Button) findViewById(R.id.edit);
         BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
@@ -82,4 +86,21 @@ public class userProfile extends AppCompatActivity {
             return true;
         }
     };
+    public void readRecords() {
+
+        linearLayoutRecords.removeAllViews();
+        User u=new UserControl(this).getSpecificUser();
+        int id = u.id;
+        String name = u.fname;
+        String email = u.email;
+        String phone = u.phone;
+
+        TextView fname = new TextView(this);
+        fname.setText(name);
+
+        linearLayoutRecords.addView(fname);
+
+
+
+    }
 }
