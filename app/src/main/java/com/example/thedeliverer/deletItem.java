@@ -57,12 +57,12 @@ public class deletItem extends AppCompatActivity {
 
                 TextView textViewRecordCount = new TextView(this);
                 textViewRecordCount.setPadding(100, 10, 10, 10);
-               // textViewRecordCount.setCompoundDrawablePadding(2);
+
                 textViewRecordCount.setTextSize(15);
                 textViewRecordCount.setText(textViewContents);
                 textViewRecordCount.setTag(id);
 
-                //Calling OnLongClickListener class to do the delete function
+
                 textViewRecordCount.setOnLongClickListener(new DeleteItemOnClick());
 
                linearLayoutRecords.addView(textViewRecordCount);

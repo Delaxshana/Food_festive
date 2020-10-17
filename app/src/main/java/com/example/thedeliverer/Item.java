@@ -10,7 +10,24 @@ public class Item implements Parcelable {
     String name;
     String type;
     String description;
-   // Bitmap image;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    // Bitmap image;
     String price;
 
     public Item() {

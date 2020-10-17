@@ -9,13 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".OrderConfirmation"></activity>
-        <activity android:name=".OrderDetails" /> 
+        <activity android:name=".UpdateItemInput"></activity>
+        <activity android:name=".search" />
+        <activity android:name=".OrderConfirmation" />
+        <activity android:name=".OrderDetails" />
         <activity android:name=".FoodCart" />
-        <activity android:name=".ViewRiders"></activity>
-        <activity android:name=".ViewDelivery"/>
-        <activity android:name=".editUser"></activity>
-
+        <activity android:name=".ViewRiders" />
+        <activity android:name=".ViewDelivery" />
+        <activity android:name=".editUser" />
         <activity android:name=".adminDashboard" />
         <activity android:name=".deletItem" />
         <activity android:name=".updateItem" />
@@ -25,7 +26,6 @@
         <activity android:name=".userProfile" />
         <activity android:name=".pizza" />
         <activity android:name=".dashboard" />
-
         <activity android:name=".AddDelivery" />
         <activity android:name=".UpdateDelivery" />
         <activity android:name=".AddRider" />

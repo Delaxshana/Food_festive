@@ -5,77 +5,93 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.thedeliverer.Database.TableControllerDelivery;
+import java.util.List;
 
 public class updateItem extends AppCompatActivity {
-    EditText name, desc, price;
-    Button update;
-    TableControllerDelivery mydb;
+    Button btn;
+    TextView textViewRecordCount;
+    LinearLayout linearLayoutRecords;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_item);
 
-        mydb = new TableControllerDelivery(this);
-        name = findViewById(R.id.itemNameUpdate);
-        desc = findViewById(R.id.itemDescUpdate);
-        price = findViewById(R.id.itemPriceUpdate);
-        update = findViewById(R.id.updateItem);
+        btn = (Button)findViewById(R.id.button);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(updateItem.this,UpdateItemInput.class);
+                startActivity(intent);
+            }
+        });
+
+        textViewRecordCount = this.findViewById(R.id.count);
+        linearLayoutRecords = this.findViewById(R.id.records);
+
+        countRecords();
+        readRecords();
+
     }
 
-    public void UpdateItemData() {
+    public void countRecords() {
+        int recordCount = new ItemControl(this).count();
+        TextView textViewRecordCount = (TextView) findViewById(R.id.count);
+        textViewRecordCount.setText(recordCount + " Items in the list");
 
+    }
 
-        update.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
+    public void readRecords() {
 
-                        //validations
+        linearLayoutRecords.removeAllViews();
 
-                        String itemName = name.getText().toString().trim();
-                        String itemPrice = desc.getText().toString().trim();
-                        String itemDesc = price.getText().toString().trim();
+        List<Item> items = new ItemControl(this).getAllItem();
 
+        if (items.size() > 0) {
+            for (Item i : items) {
 
-                        if (itemName.isEmpty()) {
-                            name.setError("Required");
-                        }
-                        if (itemPrice.isEmpty()) {
-                            price.setError("Required");
-                        }
-                        if (itemDesc.isEmpty()) {
-                            desc.setError("Required");
-                        }
+                int id = i.id;
+                String name = i.name;
+                String desc = i.description;
+                String price = i.price;
 
+                String textViewContents = "Item ID : " + id + "\n" + "Item name : " + name + "\n" + "Item description : " + desc + "\n" + "Item Price : " + price + "\n\n";
 
-                        if (itemName.isEmpty() || itemPrice.isEmpty()) {
-                            Toast.makeText(updateItem.this, "Fill required fields", Toast.LENGTH_SHORT).show();
-                        } else {
+                TextView textViewRecordCount = new TextView(this);
+                textViewRecordCount.setPadding(100, 10, 10, 10);
+                // textViewRecordCount.setCompoundDrawablePadding(2);
+                textViewRecordCount.setTextSize(15);
+                textViewRecordCount.setText(textViewContents);
+                textViewRecordCount.setTag(id);
 
-                            //update method called from tablecontrollerdelivery class
-                            boolean isUpdate = mydb.updateDelivery(name.getText().toString(), desc.getText().toString(), price.getText().toString());
-
-
-                            //checking whether updated or not
-                            if (isUpdate = true) {
-                                Toast.makeText(updateItem.this, "Data successfully updated", Toast.LENGTH_SHORT).show();
-
-                                Intent i1 = new Intent(updateItem.this, adminDashboard.class);
-                                startActivity(i1);
-                            } else {
-                                Toast.makeText(updateItem.this, "Data not successfully updated", Toast.LENGTH_SHORT).show();
+                //Calling OnLongClickListener class to do the delete function
+               // textViewRecordCount.setOnLongClickListener(new UpdateItemOnClick());
+                textViewRecordCount.setOnClickListener(
+                        new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Intent intent = new Intent(updateItem.this,UpdateItemInput.class);
+                                startActivity(intent);
                             }
-
-
                         }
-                    }
-                }
-        );
+                );
+                linearLayoutRecords.addView(textViewRecordCount);
+
+            }
+
+        } else {
+
+            TextView locationItem = new TextView(this);
+            locationItem.setPadding(8, 8, 8, 8);
+            linearLayoutRecords.addView(locationItem);
+
+        }
     }
 }

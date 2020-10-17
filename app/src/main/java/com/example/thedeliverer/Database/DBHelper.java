@@ -123,7 +123,6 @@ public class DBHelper extends SQLiteOpenHelper {
         };
 
         String sortOrder = UsersMaster.Users.COLUMN_NAME_ITEM + " DESC";
-
         Cursor cursor = db.query(
                 UsersMaster.Users.CART_TABLE_NAME,
                 projection,

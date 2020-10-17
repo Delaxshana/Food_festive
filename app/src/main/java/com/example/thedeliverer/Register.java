@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatCheckBox;
 
 public class Register extends AppCompatActivity {
-     public static final String EMAIL ="email";
+    public static final String EMAIL ="email";
     private EditText firstName, lastName,email,password,cPassword,phone;
     private Button login, register,showHideBtn;
     private AppCompatCheckBox checkbox;

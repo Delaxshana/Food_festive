@@ -13,7 +13,7 @@ public class editUser extends AppCompatActivity {
 
     EditText fName;
     EditText lName;
-    EditText phone;
+    EditText phoneNo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +21,7 @@ public class editUser extends AppCompatActivity {
 
         fName=(EditText) findViewById(R.id.fName);
         lName=(EditText) findViewById(R.id.lName);
-        phone=(EditText) findViewById(R.id.phone);
+        phoneNo=(EditText) findViewById(R.id.phone);
 
         conform=(Button) findViewById(R.id.conform);
         back=(Button) findViewById(R.id.back);
@@ -32,7 +32,7 @@ public class editUser extends AppCompatActivity {
 
                 String fNamevalue=fName.getText().toString();
                 String lNamevalue=lName.getText().toString();
-                String phonenovalue=phone.getText().toString();
+                String phonenovalue=phoneNo.getText().toString();
 
                 Intent intent = new Intent(editUser.this, userProfile.class);
                 intent.putExtra("firstName",fNamevalue);

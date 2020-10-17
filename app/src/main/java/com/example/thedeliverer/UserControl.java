@@ -13,12 +13,14 @@ public class UserControl extends DatabaseHelper{
 
     public UserControl(@Nullable Context context) {
         super(context);
+        DatabaseHelper dbHelper;
+        SQLiteDatabase db;
     }
 
-    public User getSpecificUser() {
+    public User getSpecificUser(String idIn) {
 
-        String val = "1";
-        String sql = "SELECT * FROM user WHERE ID =" + val;
+        String userid = idIn;
+        String sql = "SELECT * FROM user WHERE ID =" + userid;
         SQLiteDatabase db = this.getWritableDatabase();
 
         Cursor cursor = db.rawQuery(sql, null);
@@ -27,7 +29,7 @@ public class UserControl extends DatabaseHelper{
         if (cursor.moveToFirst()) {
 
             do {
-//
+
                 int id = Integer.parseInt(cursor.getString(cursor.getColumnIndex("USER_COL_1")));
                 String username = cursor.getString(cursor.getColumnIndex("USER_COL_2"));
                 String email = cursor.getString(cursor.getColumnIndex("USER_COL_4"));

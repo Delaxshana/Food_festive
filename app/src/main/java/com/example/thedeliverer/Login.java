@@ -29,7 +29,6 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 validate(email.getText().toString(), password.getText().toString());
-              // boolean success=
               //  myDb.checkUser(email.getText().toString(), password.getText().toString());
 
               /***
@@ -38,7 +37,8 @@ public class Login extends AppCompatActivity {
                *                }
                *                else{
                *                    Toast.makeText(Login.this, "Incorrect Login", Toast.LENGTH_SHORT).show();
-               *                }**/
+               *                }
+               ***/
             }
         });
 
@@ -59,7 +59,7 @@ public class Login extends AppCompatActivity {
         });
     }
     public void validate(String name, String password){
-        if(name.equals("User")&& password.equals("1234")) {
+        if(name.equals("delaxshanas14@gmail.com")&& password.equals("12345678")) {
             Intent intent = new Intent(Login.this, dashboard.class);
             startActivity(intent);
         }

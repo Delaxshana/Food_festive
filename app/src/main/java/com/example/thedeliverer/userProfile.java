@@ -19,7 +19,7 @@ public class userProfile extends AppCompatActivity {
 
     Button edit;
     TextView fname,lname,ph;
-    LinearLayout linearLayoutRecords;
+    LinearLayout fnameLayout, lNameLayout, phoneNoLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,13 +30,13 @@ public class userProfile extends AppCompatActivity {
         lname=(TextView) findViewById(R.id.lName);
         ph=(TextView) findViewById(R.id.phoneNo);
 
-        linearLayoutRecords = this.findViewById(R.id.layout);
-        readRecords();
-//        fname.setText(getIntent().getStringExtra("firstName"));
-//        lname.setText(getIntent().getStringExtra("lastName"));
-//        ph.setText(getIntent().getStringExtra("phoneNo"));
-
         edit=(Button) findViewById(R.id.edit);
+
+        fnameLayout = this.findViewById(R.id.fNameLayout);
+        lNameLayout = this.findViewById(R.id.lNameLayout);
+        phoneNoLayout = this.findViewById(R.id.phoneNoLayout);
+
+        //readFName();
         BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
@@ -60,13 +60,13 @@ public class userProfile extends AppCompatActivity {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             Fragment selectedFragment=null;
-            switch (item.getItemId()){
+            switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    Intent intent_home = new Intent(userProfile.this,dashboard.class);
+                    Intent intent_home = new Intent(userProfile.this, dashboard.class);
                     startActivity(intent_home);
                     break;
-                case R.id.navigation_order:
-                    Intent intent = new Intent(userProfile.this,OrderDetails.class);
+                case R.id.navigation_search:
+                    Intent intent = new Intent(userProfile.this, OrderDetails.class);
                     startActivity(intent);
                     //selectedFragment = new BookingFragment();
                     break;
@@ -74,33 +74,73 @@ public class userProfile extends AppCompatActivity {
 
                     break;
                 case R.id.navigation_user:
-                    Intent intent_user = new Intent(userProfile.this,userProfile.class);
+                    Intent intent_user = new Intent(userProfile.this, userProfile.class);
                     startActivity(intent_user);
 
                     break;
 
-
             }
-
-
             return true;
         }
     };
-    public void readRecords() {
 
-        linearLayoutRecords.removeAllViews();
-        User u=new UserControl(this).getSpecificUser();
-        int id = u.id;
-        String name = u.fname;
-        String email = u.email;
-        String phone = u.phone;
+    public void readFName() {
 
-        TextView fname = new TextView(this);
-        fname.setText(name);
+        fnameLayout.removeAllViews();
 
-        linearLayoutRecords.addView(fname);
+        User user = new UserControl(this).getSpecificUser("1");
+        int userId=1;
+        String fName = user.fname;
 
+        String textViewContentsFName = fName;
 
+        TextView textViewRecordCount1 = new TextView(this);
+        textViewRecordCount1.setPadding(100, 10, 10, 10);
+        textViewRecordCount1.setTextSize(15);
+        textViewRecordCount1.setText(textViewContentsFName);
+        textViewRecordCount1.setTag(userId);
+
+        fnameLayout.addView(textViewRecordCount1);
 
     }
+    public void readlName() {
+
+        lNameLayout.removeAllViews();
+
+        User user = new UserControl(this).getSpecificUser("1");
+        int userId=1;
+        String lName= user.lname;
+
+        String textViewContentsLName=lName;
+
+        TextView textViewRecordCount1 = new TextView(this);
+        textViewRecordCount1.setPadding(100, 10, 10, 10);
+        textViewRecordCount1.setTextSize(15);
+        textViewRecordCount1.setText(textViewContentsLName);
+        textViewRecordCount1.setTag(userId);
+
+        fnameLayout.addView(textViewRecordCount1);
+
+    }
+
+    public void readphNo() {
+
+        phoneNoLayout.removeAllViews();
+
+        User user = new UserControl(this).getSpecificUser("1");
+        int userId=1;
+        String phone = user.phone;
+
+        String textViewContentsPhone = phone;
+
+        TextView textViewRecordCount1 = new TextView(this);
+        textViewRecordCount1.setPadding(100, 10, 10, 10);
+        textViewRecordCount1.setTextSize(15);
+        textViewRecordCount1.setText(textViewContentsPhone);
+        textViewRecordCount1.setTag(userId);
+
+        fnameLayout.addView(textViewRecordCount1);
+
+    }
+
 }

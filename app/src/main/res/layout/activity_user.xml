@@ -37,12 +37,16 @@
                 android:text="Name : "
                 android:textSize="22dp" />
 
-            <TextView
-                android:id="@+id/fName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="53dp"
-                android:textSize="22dp" />
+            <LinearLayout
+                android:id="@+id/fNameLayout"
+                android:layout_width="400dp"
+                android:layout_height="70dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/count"></LinearLayout>
+
 
 
         </LinearLayout>
@@ -60,13 +64,16 @@
                 android:layout_marginTop="53dp"
                 android:text="Email : "
                 android:textSize="22dp"/>
-            <TextView
-                android:id="@+id/lName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="22dp"
-                android:layout_marginTop="53dp"
-                />
+
+            <LinearLayout
+                android:id="@+id/lNameLayout"
+                android:layout_width="400dp"
+                android:layout_height="70dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/count"></LinearLayout>
 
 
         </LinearLayout>
@@ -84,13 +91,15 @@
                 android:layout_marginTop="53dp"
                 android:text="Phone : "
                 android:textSize="22dp"/>
-            <TextView
-                android:id="@+id/phoneNo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="22dp"
-                android:layout_marginTop="53dp"
-                />
+            <LinearLayout
+                android:id="@+id/phoneNoLayout"
+                android:layout_width="400dp"
+                android:layout_height="70dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/count"></LinearLayout>
 
 
         </LinearLayout>

@@ -19,9 +19,6 @@ public class adminDashboard extends AppCompatActivity {
         update = (Button)findViewById(R.id.update);
         delete = (Button)findViewById(R.id.delete);
         delivery=(Button)findViewById(R.id.delivery);
-       // addRider = (Button)findViewById(R.id.addRider);
-       // viewRider = (Button)findViewById(R.id.viewRider);
-       // deleteRider = (Button)findViewById(R.id.deleteRider);
 
 
         add.setOnClickListener(new View.OnClickListener() {
@@ -58,34 +55,6 @@ public class adminDashboard extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        /****
-         *
-         *
-         *   addRider.setOnClickListener(new View.OnClickListener() {
-         *             @Override
-         *             public void onClick(View v) {
-         *                 Intent intent = new Intent(adminDashboard.this,AddRider.class);
-         *                 startActivity(intent);
-         *             }
-         *         });
-         *
-         *         viewRider.setOnClickListener(new View.OnClickListener() {
-         *             @Override
-         *             public void onClick(View v) {
-         *
-         *                 Intent intent = new Intent(adminDashboard.this,ViewRiders.class);
-         *                 startActivity(intent);
-         *             }
-         *         });
-         *
-         *         deleteRider.setOnClickListener(new View.OnClickListener() {
-         *             @Override
-         *             public void onClick(View v) {
-         *
-         *                 Intent intent = new Intent(adminDashboard.this,updateItem.class);
-         *                 startActivity(intent);
-         *             }
-         *         });
-         */
+
     }
 }

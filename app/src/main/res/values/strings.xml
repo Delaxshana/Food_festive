@@ -73,7 +73,8 @@
     <string name="itemName">Name</string>
     <string name="itemPrice"> Price</string>
     <string name="userList"> User List</string>
-
+    <string name="item"> Item List</string>
+    <string name="itemDetails"> Item Details</string>
     <string name="user"> User</string>
     <string-array name="itemTypeDropdown">
         <item>Main Dish</item>

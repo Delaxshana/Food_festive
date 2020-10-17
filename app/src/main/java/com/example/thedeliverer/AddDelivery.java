@@ -42,11 +42,7 @@ public class AddDelivery extends AppCompatActivity {
             Contact.setError("Enter a correct mobile number");
         }
 
-
-
-
-
- //calling method
+        //calling method
         addDeliveryData();
 
     }

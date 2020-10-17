@@ -56,15 +56,16 @@
                                     android:layout_margin="4dp"
                                     app:srcCompat="@drawable/califlowerrice" />
 
-                                <TextView
-                                    android:id="@+id/textViewItem1"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="30dp"
-                                    android:background="@drawable/textborder"
-                                    android:text="@string/item1"
-                                    android:textColor="#151313"
-                                    android:gravity="center"
-                                    android:textSize="18sp" />
+                                <LinearLayout
+                                    android:id="@+id/item1Desc"
+                                    android:layout_width="400dp"
+                                    android:layout_height="70dp"
+                                    android:orientation="vertical"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/count"></LinearLayout>
+
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
@@ -99,15 +100,18 @@
                                     android:layout_margin="4dp"
                                     app:srcCompat="@drawable/friedrice" />
 
-                                <TextView
-                                    android:id="@+id/textViewItem2"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="30dp"
-                                    android:background="@drawable/textborder"
-                                    android:gravity="center"
-                                    android:text="@string/item2"
-                                    android:textColor="#151313"
-                                    android:textSize="18sp" />
+
+                                <LinearLayout
+                                    android:id="@+id/item2Desc"
+                                    android:layout_width="400dp"
+                                    android:layout_height="70dp"
+                                    android:orientation="vertical"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/count"></LinearLayout>
+
+
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
@@ -142,14 +146,18 @@
                                     android:layout_margin="8dp"
                                     app:srcCompat="@drawable/pizza3" />
 
-                                <TextView
-                                    android:id="@+id/textViewItem3"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="30dp"
-                                    android:text="@string/item3"
-                                    android:textColor="#151313"
-                                    android:gravity="center"
-                                    android:textSize="18sp" />
+
+                                <LinearLayout
+                                    android:id="@+id/item3Desc"
+                                    android:layout_width="400dp"
+                                    android:layout_height="70dp"
+                                    android:orientation="vertical"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/count"></LinearLayout>
+
+
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
@@ -184,13 +192,18 @@
                                     android:layout_margin="4dp"
                                     app:srcCompat="@drawable/pizza3" />
 
-                                <TextView
-                                    android:id="@+id/textViewItem4"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="30dp"
-                                    android:text="@string/item3"
-                                    android:textColor="#151313"
-                                    android:textSize="18sp" />
+
+                                <LinearLayout
+                                    android:id="@+id/item4Desc"
+                                    android:layout_width="400dp"
+                                    android:layout_height="70dp"
+                                    android:orientation="vertical"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/count"></LinearLayout>
+
+
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
